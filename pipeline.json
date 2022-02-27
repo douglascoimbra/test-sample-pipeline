@@ -10,7 +10,7 @@
   "pipelines": [
     {
       "pipelineName": "invoice_main",
-      "pipelineDescription": "Pipeline for the invoice table, that uses se2",
+      "pipelineDescription": "Developing!",
       "outputDataModelName": "apinvoice",
       "overlapDeltaMinutes": 180,
       "saveToCds": true,
