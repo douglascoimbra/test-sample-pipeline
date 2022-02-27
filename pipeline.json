@@ -1,0 +1,39 @@
+{
+  "defaults": {
+    "cronExpressions": [
+      "0 */5 0 ? * * *"
+    ],
+    "prepareScripts": [
+      "prepare.sql"
+    ]
+  },
+  "pipelines": [
+    {
+      "pipelineName": "invoice_main",
+      "pipelineDescription": "Pipeline for the invoice table, that uses se2",
+      "outputDataModelName": "apinvoice",
+      "overlapDeltaMinutes": 180,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "sendToSubscriptions": true,
+      "cronExpressions": [
+        "0 */5 0 ? * * *"
+      ],
+      "prepareScripts": [
+        "invoice_prepare.sql"
+      ],
+      "processScript": "invoice.sql",
+      "sourceEntities": {
+        "dataModels": [
+          "currency"
+        ],
+        "stagings": [
+          {
+            "connectorName": "pro",
+            "stagingName": "se2"
+          }
+        ]
+      }
+    }
+  ]
+}
