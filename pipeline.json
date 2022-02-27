@@ -25,7 +25,9 @@
       "processScript": "invoice.sql",
       "sourceEntities": {
         "dataModels": [
-          "currency"
+          {
+            "dataModelName": "currency"
+          }
         ],
         "stagings": [
           {
