@@ -9,9 +9,9 @@
   },
   "pipelines": [
     {
-      "pipelineName": "invoice_main",
-      "pipelineDescription": "Pipeline for the invoice table, that uses se2",
-      "outputDataModelName": "apinvoice",
+      "pipelineName": "product_main",
+      "pipelineDescription": "Pipeline for the product table, that uses nlp_product",
+      "outputDataModelName": "mdmproduct",
       "overlapDeltaMinutes": 180,
       "saveToCds": true,
       "saveToUnified": true,
@@ -20,19 +20,14 @@
         "0 */5 0 ? * * *"
       ],
       "prepareScripts": [
-        "invoice_prepare.sql"
+        "product_prepare.sql"
       ],
-      "processScript": "invoice.sql",
+      "processScript": "product.sql",
       "sourceEntities": {
-        "dataModels": [
-          {
-            "dataModelName": "currency"
-          }
-        ],
         "stagings": [
           {
-            "connectorName": "pro",
-            "stagingName": "se2"
+            "connectorName": "nlp",
+            "stagingName": "product"
           }
         ]
       }
