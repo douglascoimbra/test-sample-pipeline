@@ -9,30 +9,26 @@
   },
   "pipelines": [
     {
-      "pipelineName": "invoice_main",
-      "pipelineDescription": "Developing!",
-      "outputDataModelName": "apinvoice",
+      "pipelineName": "product_main",
+      "pipelineDescription": "Pipeline for the product table, that uses nlp_product. develop",
+      "outputDataModelName": "mdmproduct",
       "overlapDeltaMinutes": 180,
       "saveToCds": true,
       "saveToUnified": true,
       "sendToSubscriptions": true,
       "cronExpressions": [
-        "0 */5 0 ? * * *"
+        "0 5,15,25,35,45,55 * * * ?"
       ],
+      "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
-        "invoice_prepare.sql"
+        "product_prepare.sql"
       ],
-      "processScript": "invoice.sql",
+      "processScript": "product.sql",
       "sourceEntities": {
-        "dataModels": [
-          {
-            "dataModelName": "currency"
-          }
-        ],
         "stagings": [
           {
-            "connectorName": "pro",
-            "stagingName": "se2"
+            "connectorName": "nlp",
+            "stagingName": "product"
           }
         ]
       }
