@@ -1,7 +1,7 @@
 {
   "defaults": {
     "cronExpressions": [
-      "0 */5 0 ? * * *"
+      "0 10,40 * * * ?"
     ],
     "prepareScripts": [
       "prepare.sql"
@@ -10,14 +10,14 @@
   "pipelines": [
     {
       "pipelineName": "product_main",
-      "pipelineDescription": "Pipeline for the product table, that uses nlp_product",
+      "pipelineDescription": "Pipeline for the product table, that uses nlp_product. Runs every 30 minutes",
       "outputDataModelName": "mdmproduct",
       "overlapDeltaMinutes": 180,
       "saveToCds": true,
       "saveToUnified": true,
       "sendToSubscriptions": true,
       "cronExpressions": [
-        "0 5,15,25,35,45,55 * * * ?"
+        "0 10,40 * * * ?"
       ],
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
