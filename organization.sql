@@ -1,15 +1,17 @@
-with organization as (
+with company_fndhierarchyorganization as (
     select 
         stg.uuid as uuid,
-        stg.name as name,
-        stg.alias as alias,
-        stg.federalid as federalid
+        stg.parent_uuid as parent_uuid,
+        stg.id as id,
+        stg.level_description as level_description,
+        stg.description as description,
+        stg.path as path
         --metadata--
     from stg_protheus_company stg
 ),
-company as (
+fndhierarchyorganization as (
     select *
-    from stg_protheus_company
+    from company_fndhierarchyorganization stg
 )
-
-select * from company
+ 
+select * fndhierarchyorganization
