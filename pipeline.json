@@ -33,8 +33,8 @@
         ]
       }
     },{
-      "pipelineName": "organization_main",
-      "pipelineDescription": "Pipeline for the organization table, that uses staging protheus_organization",
+      "pipelineName": "company_main",
+      "pipelineDescription": "Pipeline for the company table, that uses staging protheus_company",
       "outputDataModelName": "company",
       "overlapDeltaMinutes": 180,
       "saveToCds": true,
@@ -45,14 +45,14 @@
       ],
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
-        "organization_prepare.sql"
+        "company_prepare.sql"
       ],
-      "processScript": "organization.sql",
+      "processScript": "company.sql",
       "sourceEntities": {
         "stagings": [
           {
             "connectorName": "protheus",
-            "stagingName": "organization"
+            "stagingName": "company"
           }
         ]
       }
