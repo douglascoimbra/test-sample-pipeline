@@ -8,18 +8,7 @@ with organization as (
         --metadata--
     from stg_protheus_carol_organization stg
     --timestamp-- WHERE stg.mdmCounterForEntity > {{start_from}}
-),
-company as (
-    select 
-        stg.uuid as uuid,
-        stg.description as name,
-        stg.description as alias,
-        "" as federalid,
-        stg.mdmCounterForEntity as _counter
-        --metadata--
-    from stg_protheus_carol_company stg
-    --timestamp-- WHERE stg.mdmCounterForEntity > {{start_from}}
-),
+)
 organization_company as (
     select * from organization
     union all
