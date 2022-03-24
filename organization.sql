@@ -8,7 +8,7 @@ with organization as (
         --metadata--
     from stg_protheus_carol_organization stg
     --timestamp-- WHERE stg.mdmCounterForEntity > {{start_from}}
-)
+),
 organization_company as (
     select * from organization
     union all
