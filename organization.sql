@@ -11,9 +11,7 @@ with organization as (
 ),
 organization_company as (
     select * from organization
-    union all
-    select * from company
-)
+   )
 
 select * except(_counter, ranking),
 (
