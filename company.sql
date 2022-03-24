@@ -14,4 +14,4 @@ fndhierarchyorganization as (
     from company_fndhierarchyorganization stg
 )
  
-select * fndhierarchyorganization
+select * from fndhierarchyorganization
