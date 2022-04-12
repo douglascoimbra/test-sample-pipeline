@@ -1,4 +1,4 @@
-with organization as (
+with organization_tex as (
     select 
         stg.uuid as uuid,
         stg.name as name,
@@ -10,7 +10,7 @@ with organization as (
     --timestamp-- WHERE stg.mdmCounterForEntity > {{start_from}}
 ),
 organization_company as (
-    select * from organization
+    select * from organization_tex
    )
 
 select * except(_counter, ranking),
