@@ -1,7 +1,7 @@
 
 SELECT 
     stg.productname as mdmname,
-    CONCAT("qawork-", stg.productname) as mdmdescription,
+    CONCAT("qatest-", stg.productname) as mdmdescription,
     stg.productprice as mdmunitvalue,
     CONTAINS_SUBSTR(stg.productname, 'banan') AS mdmDeleted
     --metadata--
