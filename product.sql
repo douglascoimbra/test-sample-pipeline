@@ -6,4 +6,4 @@ SELECT
     CONTAINS_SUBSTR(stg.productname, 'banan') AS mdmDeleted
     --metadata--
 from stg_nlp_product as stg
---timestamp--
+WHERE stg.mdmCounterForEntity >= 0 --timestamp--
