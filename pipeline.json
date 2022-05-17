@@ -52,6 +52,7 @@
       "sendToSubscriptions": true,
       "cronExpressions": [
         "0 5,15,25,35,45,55 * * * ?"
+
       ],
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
