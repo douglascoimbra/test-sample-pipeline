@@ -1,7 +1,7 @@
 SELECT 
-    stg.id as mdmbarcode
+    stg.id as mdmbarcode,
     stg.productname as mdmname,
-    CONCAT(stg.category) as mdmdescription,
+    stg.category as mdmdescription,
     stg.productprice as mdmunitvalue,
     CONTAINS_SUBSTR(stg.productname, 'banan') AS mdmDeleted
     --metadata--
