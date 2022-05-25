@@ -15,9 +15,10 @@
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
       "saveToUnified": true,
+      "saveToRealtime": true,
       "sendToSubscriptions": true,
       "cronExpressions": [
-        "0 5,15,25,35,45,55 * * * ?"
+        "0 10,20,30,40,50 * * * ?"
       ],
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
