@@ -38,14 +38,40 @@
           {
             "connectorName": "nlp",
             "stagingName": "product"
-          },
+          }
+        ]
+      }
+    },
+    {
+      "pipelineName": "purchaseorder_main",
+      "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
+      "outputDataModelName": "mdmpurchaseorder",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "cronExpressions": [
+        "0 10,20,30,40,50 * * * ?"
+      ],
+      "timeZone": "America/Sao_Paulo",
+      "prepareScripts": [
+        "purchaseorder_prepare.sql"
+      ],
+      "processScript": "purchaseorder.sql",
+      "sourceEntities": {
+        "dataModels": [
+
+          {
+
+              "dataModelName": "mdmpurchaseorder"
+
+           }
+],
+        "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "douglas"
-          },
-          {
-            "connectorName": "nlp",
-            "stagingName": "coimbra"
+            "stagingName": "purchaseorder"
           }
         ]
       }
