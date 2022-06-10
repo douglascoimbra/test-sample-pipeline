@@ -1,7 +1,7 @@
 SELECT 
     stg.orderid as mdmorderid,
-    stg.country as mdmcountry,
     stg.customername as mdmcustomername,
+    stg.country as mdmcountry,
     CONCAT("qawork-", stg.category) as mdmcategoryname,
     CONTAINS_SUBSTR(stg.country, 'Brazil') AS mdmDeleted
     --metadata--
