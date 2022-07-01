@@ -72,6 +72,10 @@
           {
             "connectorName": "nlp",
             "stagingName": "purchaseorder"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "coimbra"
           }
         ]
       }
