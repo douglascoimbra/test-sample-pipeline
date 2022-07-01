@@ -82,6 +82,7 @@
       "outputDataModelName": "organization",
       "overlapDeltaMinutes": 180,
       "saveToCds": true,
+      "saveToRealtime": true,
       "saveToUnified": true,
       "sendToSubscriptions": true,
       "cronExpressions": [
