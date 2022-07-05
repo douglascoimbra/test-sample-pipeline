@@ -72,44 +72,6 @@
           {
             "connectorName": "nlp",
             "stagingName": "purchaseorder"
-          },
-          {
-            "connectorName": "nlp",
-            "stagingName": "coimbra"
-          }
-        ]
-      }
-    },
-    {
-      "pipelineName": "organization_main",
-      "pipelineDescription": "Pipeline for the organization table, that uses staging protheus_carol_organization",
-      "outputDataModelName": "organization",
-      "overlapDeltaMinutes": 180,
-      "saveToCds": true,
-      "saveToUnified": true,
-      "sendToSubscriptions": true,
-      "cronExpressions": [
-        "0 5,15,25,35,45,55 * * * ?"
-
-      ],
-      "timeZone": "America/Sao_Paulo",
-      "prepareScripts": [
-        "organization_prepare.sql"
-      ],
-      "processScript": "organization.sql",
-      "sourceEntities": {
-        "dataModels": [
-
-          {
-
-              "dataModelName": "organization"
-
-           }
-],
-        "stagings": [
-          {
-            "connectorName": "protheus_carol",
-            "stagingName": "organization"
           }
         ]
       }
