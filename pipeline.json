@@ -75,40 +75,6 @@
           }
         ]
       }
-    },
-    {
-      "pipelineName": "product_main",
-      "pipelineDescription": "Pipeline for the clockin_parquet table, that uses staging clockin_clockin_parquet",
-      "outputDataModelName": "mdmproduct",
-      "overlapDeltaMinutes": 30,
-      "saveToCds": true,
-      "saveToUnified": true,
-      "saveToRealtime": true,
-      "sendToSubscriptions": true,
-      "cronExpressions": [
-        "0 10,20,30,40,50 * * * ?"
-      ],
-      "timeZone": "America/Sao_Paulo",
-      "prepareScripts": [
-        "product_prepare.sql"
-      ],
-      "processScript": "product.sql",
-      "sourceEntities": {
-        "dataModels": [
-
-          {
-
-              "dataModelName": "mdmproduct"
-
-           }
-],
-        "stagings": [
-          {
-            "connectorName": "clockin",
-            "stagingName": "clockin_parquet"
-          }
-        ]
-      }
     }
     
   ]
