@@ -80,6 +80,10 @@
           {
             "connectorName": "nlp",
             "stagingName": "lopes"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "qadrink"
           }
         ]
       }
