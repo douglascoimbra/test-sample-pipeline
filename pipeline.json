@@ -79,7 +79,7 @@
           },
           {
             "connectorName": "nlp",
-            "stagingName": "qadrink"
+            "stagingName": "coimbra"
           }
         ]
       }
