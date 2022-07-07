@@ -76,6 +76,10 @@
           {
             "connectorName": "nlp",
             "stagingName": "coimbra"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "lopes"
           }
         ]
       }
