@@ -5,5 +5,5 @@ SELECT
     CONCAT("qawork-", stg.category) as mdmcategoryname,
     CONTAINS_SUBSTR(stg.country, 'Brazil') AS mdmDeleted
     --metadata--
-from stg_nlp_table_qa as stg
+from stg_nlp_tableqa as stg
 --timestamp-- where stg.mdmCounterForEntity > {{start_from}}
