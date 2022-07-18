@@ -75,6 +75,40 @@
           }
         ]
       }
+    },
+    {
+      "pipelineName": "tableqa_main",
+      "pipelineDescription": "Pipeline for the tableqa table, that uses staging nlp_tableqa",
+      "outputDataModelName": "mdmdouglas",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "cronExpressions": [
+        "0 10,20,30,40,50 * * * ?"
+      ],
+      "timeZone": "America/Sao_Paulo",
+      "prepareScripts": [
+        "tableqa_prepare.sql"
+      ],
+      "processScript": "tableqa.sql",
+      "sourceEntities": {
+        "dataModels": [
+
+          {
+
+              "dataModelName": "mdmdouglas"
+
+           }
+],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "tableqa"
+          }
+        ]
+      }
     }
   ]
 }
