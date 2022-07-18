@@ -79,40 +79,6 @@
     {
       "pipelineName": "tableqa_main",
       "pipelineDescription": "Pipeline for the tableqa table, that uses staging nlp_tableqa",
-      "outputDataModelName": "mdmdouglas",
-      "overlapDeltaMinutes": 30,
-      "saveToCds": true,
-      "saveToUnified": true,
-      "saveToRealtime": true,
-      "sendToSubscriptions": true,
-      "cronExpressions": [
-        "0 10,20,30,40,50 * * * ?"
-      ],
-      "timeZone": "America/Sao_Paulo",
-      "prepareScripts": [
-        "tableqa_prepare.sql"
-      ],
-      "processScript": "mdmjarbas.sql",
-      "sourceEntities": {
-        "dataModels": [
-
-          {
-
-              "dataModelName": "mdmjarbas"
-
-           }
-],
-        "stagings": [
-          {
-            "connectorName": "nlp",
-            "stagingName": "tableqa"
-          }
-        ]
-      }
-    },
-    {
-      "pipelineName": "maiki_main",
-      "pipelineDescription": "Pipeline for the maiki_main table, that uses staging nlp_maiki_main",
       "outputDataModelName": "mdmjarbas",
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
@@ -139,7 +105,7 @@
         "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "maiki"
+            "stagingName": "tableqa"
           }
         ]
       }
