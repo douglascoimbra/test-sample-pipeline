@@ -92,13 +92,13 @@
       "prepareScripts": [
         "tableqa_prepare.sql"
       ],
-      "processScript": "tableqa.sql",
+      "processScript": "mdmjarbas.sql",
       "sourceEntities": {
         "dataModels": [
 
           {
 
-              "dataModelName": "mdmdouglas"
+              "dataModelName": "mdmjarbas"
 
            }
 ],
