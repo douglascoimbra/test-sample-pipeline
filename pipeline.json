@@ -15,7 +15,8 @@
       "overlapDeltaMinutes": 180,
       "saveToCds": true,
       "saveToUnified": true,
-      "sendToSubscriptions": true,
+      "saveToRealtime": true,
+      'sendToSubscriptions": true,
       "cronExpressions": [
         "0 10,40 * * * ?"
       ],
