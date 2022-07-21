@@ -10,7 +10,7 @@
   "pipelines": [
     {
       "pipelineName": "product_main",
-      "pipelineDescription": "Pipeline for the product table, that uses nlp_product. Runs every 30 minutes",
+      "pipelineDescription": "Pipeline for the product table, that uses nlp_product. It Runs every 30 minutes",
       "outputDataModelName": "mdmproduct",
       "overlapDeltaMinutes": 180,
       "saveToCds": true,
