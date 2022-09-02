@@ -20,8 +20,10 @@ WITH product AS (
 SELECT
     *,
     (
-        (mdmname IS NULL OR LENGTH(TRIM(mdmname)) = 0)
-        OR (mdmcategoryname IS NULL OR LENGTH(TRIM(mdmcategoryname))
+        (mdmname IS NULL) 
+        OR (LENGTH(TRIM(mdmname)) = 0)
+        OR (mdmcategoryname IS NULL)
+        OR (LENGTH(TRIM(mdmcategoryname)) = 0)
     ) AS mdmDeleted
 FROM
     product

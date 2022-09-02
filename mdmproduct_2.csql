@@ -7,7 +7,7 @@ WITH product AS (
         image AS mdmimage,
         category AS mdmcategoryname,
         (SELECT AS STRUCT CAST(variations.quantity AS INT64) AS mdmquantity, variations.name AS mdmname) AS mdmvariations,
-        '-26.2650789,-48.8513788}' AS homeplace
+        '-26.2650789,-48.8513788' AS homeplace
         --metadata--
     FROM
         stg_nlp_product
@@ -20,8 +20,10 @@ WITH product AS (
 SELECT
     *,
     (
-        (mdmname IS NULL OR LENGTH(TRIM(mdmname)) = 0)
-        OR (mdmcategoryname IS NULL OR LENGTH(TRIM(mdmcategoryname))
+        (mdmname IS NULL) 
+        OR (LENGTH(TRIM(mdmname)) = 0)
+        OR (mdmcategoryname IS NULL)
+        OR (LENGTH(TRIM(mdmcategoryname)) = 0)
     ) AS mdmDeleted
 FROM
     product
