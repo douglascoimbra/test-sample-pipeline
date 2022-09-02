@@ -1,0 +1,27 @@
+WITH product AS (
+    SELECT
+        productname AS mdmname,
+        productname AS mdmdescription,
+        productprice AS mdmunitvalue,
+        bar_code AS mdmbarcode,
+        image AS mdmimage,
+        category AS mdmcategoryname,
+        (SELECT AS STRUCT CAST(variations.quantity AS INT64) AS mdmquantity, variations.name AS mdmname) AS mdmvariations,
+        ST_GEOGPOINT(-48.8513788, -26.2650789) AS homeplace
+        --metadata--
+    FROM
+        stg_nlp_product
+        CROSS JOIN UNNEST(variations) AS variations
+    WHERE
+        1 = 1
+        --timestamp-- OR mdmCounterForEntity > {{start_from}}
+)
+
+SELECT
+    *,
+    (
+        (mdmname IS NULL OR LENGTH(TRIM(mdmname)) = 0)
+        OR (mdmcategoryname IS NULL OR LENGTH(TRIM(mdmcategoryname))
+    ) AS mdmDeleted
+FROM
+    product
