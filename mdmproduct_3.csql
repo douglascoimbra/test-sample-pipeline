@@ -10,7 +10,7 @@ WITH product AS (
         ST_GEOGPOINT(-48.8513788, -26.2650789) AS homeplace
         --metadata--
     FROM
-        stg_nlp_product
+        stg_nlp_product as stg
         CROSS JOIN UNNEST(variations) AS variations
     WHERE
         1 = 1
