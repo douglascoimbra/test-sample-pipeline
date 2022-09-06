@@ -6,6 +6,8 @@ WITH product AS (
         bar_code AS mdmbarcode,
         image AS mdmimage,
         category AS mdmcategoryname,
+        variarions as mdmaddress,
+        variarions.quantity as mdmdress.homeplace,
         (SELECT AS STRUCT CAST(variations.quantity AS INT64) AS mdmquantity, variations.name AS mdmname) AS mdmvariations,
         '{"lat":-26.2650789,"lon":-48.8513788}' AS homeplace
         --metadata--
