@@ -1,28 +1,26 @@
 WITH product AS (
     SELECT
-        productname AS mdmname,
+        id AS mdmname,
         productname AS mdmdescription,
         productprice AS mdmunitvalue,
-        bar_code AS mdmbarcode,
         image AS mdmimage,
         category AS mdmcategoryname,
-        (SELECT AS STRUCT CAST(variations.quantity AS INT64) AS mdmquantity, variations.name AS mdmname) AS mdmvariations,
-        (SELECT AS STRUCT
-            'default' AS mdmaddresstype,
-            CAST(NULL AS STRING) AS mdmcoordinates,
-            CAST(NULL AS STRING) AS mdmaddress1,
-            CAST(NULL AS STRING) AS mdmaddress2,
-            CAST(NULL AS STRING) AS mdmaddress3,
-            CAST(NULL AS STRING) AS mdmzipcode,
-            CAST(NULL AS STRING) AS mdmcity,
-            CAST(NULL AS STRING) AS mdmstate,
-            CAST(NULL AS STRING) AS mdmcountry
+        ARRAY(SELECT AS STRUCT
+            address.addresstype AS mdmaddresstype,
+            address.addresscoordinates AS mdmcoordinates,
+            address.address1 AS mdmaddress1,
+            address.address2 AS mdmaddress2,
+            address.address3 AS mdmaddress3,
+            address.zipcode AS mdmzipcode,
+            address.city AS mdmcity,
+            address.state AS mdmstate,
+            address.country AS mdmcountry
         )  as mdmaddress,
         searchplace AS homeplace
         --metadata--
     FROM
-        stg_nlp_product as stg
-        CROSS JOIN UNNEST(variations) AS variations
+        deduplicated_stg_nlp_product as stg
+        CROSS JOIN UNNEST(address) AS address
     WHERE
         1 = 1
         --timestamp-- OR mdmCounterForEntity > {{start_from}}
