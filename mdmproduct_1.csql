@@ -9,7 +9,7 @@ WITH product AS (
         (SELECT AS STRUCT CAST(variations.quantity AS INT64) AS mdmquantity, variations.name AS mdmname) AS mdmvariations,
         (SELECT AS STRUCT
             'default' AS mdmaddresstype,
-            '{"lat":-26.2650789,"lon":-48.8513788}' AS mdmcoordinates,
+            '{"lat":-34.83759307861328,"lon":-7.068934440612793}' AS mdmcoordinates,
             CAST(NULL AS STRING) AS mdmaddress1,
             CAST(NULL AS STRING) AS mdmaddress2,
             CAST(NULL AS STRING) AS mdmaddress3,
@@ -18,7 +18,7 @@ WITH product AS (
             CAST(NULL AS STRING) AS mdmstate,
             CAST(NULL AS STRING) AS mdmcountry
         )  as mdmaddress,
-        '{"lat":-26.2650789,"lon":-48.8513788}' AS homeplace
+        '{"lat":-34.83759307861328,"lon":-7.068934440612793}' AS homeplace
         --metadata--
     FROM
         stg_nlp_product as stg
