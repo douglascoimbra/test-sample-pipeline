@@ -7,7 +7,7 @@ WITH product AS (
         image AS mdmimage,
         category AS mdmcategoryname,
         (SELECT AS STRUCT CAST(variations.quantity AS INT64) AS mdmquantity, variations.name AS mdmname) AS mdmvariations,
-       ARRAY(SELECT AS STRUCT
+       (SELECT AS STRUCT
             'default' AS mdmaddresstype,
             '{"lat":-34.83759307861328,"lon":-7.068934440612793}' AS mdmcoordinates,
             CAST(NULL AS STRING) AS mdmaddress1,
