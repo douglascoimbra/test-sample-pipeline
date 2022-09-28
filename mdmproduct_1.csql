@@ -6,7 +6,6 @@ WITH product AS (
         bar_code AS mdmbarcode,
         image AS mdmimage,
         category AS mdmcategoryname,
-        (SELECT AS STRUCT CAST(variations.quantity AS INT64) AS mdmquantity, variations.name AS mdmname) AS mdmvariations,
        (SELECT AS STRUCT
             'default' AS mdmaddresstype,
             '{"lat":-34.83759307861328,"lon":-7.068934440612793}' AS mdmcoordinates,
@@ -22,19 +21,6 @@ WITH product AS (
         --metadata--
     FROM
         stg_nlp_product as stg
-        CROSS JOIN UNNEST(variations) AS variations
-    WHERE
-        1 = 1
-        --timestamp-- OR mdmCounterForEntity > {{start_from}}
-)
+    --timestamp--
 
-SELECT
-    *,
-    (
-        (mdmname IS NULL) 
-        OR (LENGTH(TRIM(mdmname)) = 0)
-        OR (mdmcategoryname IS NULL)
-        OR (LENGTH(TRIM(mdmcategoryname)) = 0)
-    ) AS mdmDeleted
-FROM
-    product
+) SELECT * FROM mdmproduct
