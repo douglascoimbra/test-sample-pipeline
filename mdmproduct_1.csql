@@ -5,7 +5,7 @@ WITH product AS (
         productprice AS mdmunitvalue,
         image AS mdmimage,
         category AS mdmcategoryname,
-       ARRAY(SELECT AS STRUCT
+        (SELECT AS STRUCT
             (address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
             (address[SAFE_ORDINAL(1)].addresscoordinates) AS mdmcoordinates,
             (address[SAFE_ORDINAL(1)].address1) AS mdmaddress1,
@@ -20,6 +20,12 @@ WITH product AS (
         --metadata--
     FROM
         stg_nlp_product as stg
-    --timestamp--
+    WHERE
+        1 = 1
+        --timestamp-- OR mdmCounterForEntity > {{start_from}}
+)
 
-) SELECT * FROM mdmproduct
+SELECT
+    *
+FROM
+    product
