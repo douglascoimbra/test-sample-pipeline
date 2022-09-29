@@ -6,15 +6,15 @@ WITH product AS (
         image AS mdmimage,
         category AS mdmcategoryname,
        ARRAY(SELECT AS STRUCT
-            (address.addresstype) AS mdmaddresstype,
-            (address.addresscoordinates) AS mdmcoordinates,
-            (address.address1) AS mdmaddress1,
-            (address.address2) AS mdmaddress2,
-            (address.address3) AS mdmaddress3,
-            (address.zipcode) AS mdmzipcode,
-            (address.city) AS mdmcity,
-            (address.state) AS mdmstate,
-            (address.country) AS mdmcountry
+            (address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
+            (address[SAFE_ORDINAL(1)].addresscoordinates) AS mdmcoordinates,
+            (address[SAFE_ORDINAL(1)].address1) AS mdmaddress1,
+            (address[SAFE_ORDINAL(1)].address2) AS mdmaddress2,
+            (address[SAFE_ORDINAL(1)].address3) AS mdmaddress3,
+            (address[SAFE_ORDINAL(1)].zipcode) AS mdmzipcode,
+            (address[SAFE_ORDINAL(1)].city) AS mdmcity,
+            (address[SAFE_ORDINAL(1)].state) AS mdmstate,
+            (address[SAFE_ORDINAL(1)].country) AS mdmcountry
         )  as mdmaddress,
         searchplace AS homeplace
         --metadata--
