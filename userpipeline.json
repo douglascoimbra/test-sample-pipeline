@@ -10,8 +10,8 @@
   "pipelines": [
     {
       "pipelineName": "product_main",
-      "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
-      "outputDataModelName": "mdmproduct",
+      "pipelineDescription": "Pipeline based to create users through SQL Process",
+      "outputDataModelName": "mdmuser",
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
       "saveToUnified": true,
@@ -25,57 +25,15 @@
       "prepareScripts": [
         "product_prepare.sql"
       ],
-      "processScript": "mdmproduct_3.csql",
+      "processScript": "user.csql",
       "sourceEntities": {
         "dataModels": [
 
           {
 
-              "dataModelName": "mdmproduct"
+              "dataModelName": "mdmuser"
 
            }
 ],
-        "stagings": [
-          {
-            "connectorName": "nlp",
-            "stagingName": "product"
-          }
-        ]
-      }
-    },
-    {
-      "pipelineName": "purchaseorder_main",
-      "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
-      "outputDataModelName": "mdmpurchaseorder",
-      "overlapDeltaMinutes": 30,
-      "saveToCds": true,
-      "saveToUnified": true,
-      "saveToRealtime": true,
-      "sendToSubscriptions": true,
-      "cronExpressions": [
-        "0 10,20,30,40,50 * * * ?"
-      ],
-      "timeZone": "America/Sao_Paulo",
-      "prepareScripts": [
-        "purchaseorder_prepare.sql"
-      ],
-      "processScript": "purchaseorder.sql",
-      "sourceEntities": {
-        "dataModels": [
-
-          {
-
-              "dataModelName": "mdmpurchaseorder"
-
-           }
-],
-        "stagings": [
-          {
-            "connectorName": "nlp",
-            "stagingName": "purchaseorder"
-          }
-        ]
-      }
+             }
     }
-  ]
-}
