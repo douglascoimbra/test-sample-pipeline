@@ -4,6 +4,7 @@ WITH product AS (
         productname AS mdmdescription,
         productprice AS mdmunitvalue,
         image AS mdmimage,
+        true AS __resolveGeolocation,
         category AS mdmcategoryname,
         (SELECT AS STRUCT
             (address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
