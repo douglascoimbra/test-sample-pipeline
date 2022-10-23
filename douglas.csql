@@ -1,0 +1,46 @@
+WITH product_mdmproduct AS (
+  SELECT
+    null AS mdmname,
+    null AS mdmdescription,
+    null AS mdmunitvalue,
+    null AS mdmbarcode,
+    null AS mdmunitofmeasure,
+    null AS mdmproducttype,
+    null AS mdmregisterdate,
+    null AS mdmreleasedate,
+    null AS mdmweight,
+    null AS mdmlength,
+    null AS mdmwidth,
+    null AS mdmheight,
+    null AS mdmimage,
+    null AS mdmcategoryname,
+    null AS mdmvariations
+    --metadata--
+  FROM (
+    SELECT * EXCEPT(ranking)
+    FROM (
+      SELECT ROW_NUMBER() OVER (partition BY mdmId ORDER BY mdmCounterForEntity DESC) ranking, *
+      FROM stg_nlp_product
+      --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > {{start_from}}
+    )
+    WHERE ranking = 1
+  ) AS stg
+),
+lookup_mdmproduct AS (
+  SELECT *
+  FROM mdmproduct
+  WHERE mdmDeleted IS NULL
+  OR mdmDeleted = false
+),
+combinedSources AS (
+  SELECT * FROM product_mdmproduct
+),
+processedData AS (
+  SELECT *
+  FROM combinedSources
+  -- WHERE
+  -- rejection rules
+)
+
+SELECT * FROM processedData
+
