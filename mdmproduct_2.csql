@@ -1,40 +1,32 @@
 WITH product AS (
     SELECT
-        productname AS mdmname,
+        id AS mdmname,
         productname AS mdmdescription,
         productprice AS mdmunitvalue,
-        bar_code AS mdmbarcode,
         image AS mdmimage,
         true AS __resolveGeolocation,
         category AS mdmcategoryname,
-        (SELECT AS STRUCT CAST(variations.quantity AS INT64) AS mdmquantity, variations.name AS mdmname) AS mdmvariations,
-       (SELECT AS STRUCT
-            'default' AS mdmaddresstype,
-            CAST(NULL AS STRING) AS mdmaddress1,
-            CAST(NULL AS STRING) AS mdmaddress2,
-            CAST(NULL AS STRING) AS mdmaddress3,
-            CAST(NULL AS STRING) AS mdmzipcode,
-            'São Paulo' AS mdmcity,
-            'SP' AS mdmstate,
-            '' AS mdmcountry
+        (SELECT AS STRUCT
+            (address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
+            (address[SAFE_ORDINAL(1)].addresscoordinates) AS mdmcoordinates,
+            (address[SAFE_ORDINAL(1)].address1) AS mdmaddress1,
+            (address[SAFE_ORDINAL(1)].address2) AS mdmaddress2,
+            (address[SAFE_ORDINAL(1)].address3) AS mdmaddress3,
+            (address[SAFE_ORDINAL(1)].zipcode) AS mdmzipcode,
+            (address[SAFE_ORDINAL(1)].city) AS mdmcity,
+            (address[SAFE_ORDINAL(1)].state) AS mdmstate,
+            (address[SAFE_ORDINAL(1)].country) AS mdmcountry
         )  as mdmaddress,
-        '{"lat":-34.83759307861328,"lon":-7.068934440612793}' AS homeplace
+        searchplace AS homeplace
         --metadata--
     FROM
         stg_nlp_product as stg
-        CROSS JOIN UNNEST(variations) AS variations
     WHERE
         1 = 1
         --timestamp-- OR mdmCounterForEntity > {{start_from}}
 )
 
 SELECT
-    *,
-    (
-        (mdmname IS NULL) 
-        OR (LENGTH(TRIM(mdmname)) = 0)
-        OR (mdmcategoryname IS NULL)
-        OR (LENGTH(TRIM(mdmcategoryname)) = 0)
-    ) AS mdmDeleted
+    *
 FROM
     product
