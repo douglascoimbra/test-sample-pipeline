@@ -5,6 +5,7 @@
       "pipelineDescription": "Pipeline for user creation Through SQL Process",
       "processScript": "mdmusercsql",
       "sendToSubscriptions": true,
+      "clearBigQuery": true,
       "saveToCds": true,
       "outputDataModelName": "mdmuser",
       "saveToUnified": true,
