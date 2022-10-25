@@ -1,0 +1,23 @@
+{
+  "pipelines": [
+    {
+      "processScript": "mdmusercsql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "outputDataModelName": "mdmuser",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 */5 0 ? * * *"
+      ],
+      "overlapDeltaMinutes": 30,
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmuser"
+          }
+        ],
+        "stagings": []
+      }
+    }
+  ]
+}

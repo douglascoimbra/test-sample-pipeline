@@ -1,10 +1,10 @@
 {
   "pipelines": [
     {
-      "processScript": "douglas.csql",
+      "processScript": "worong.csql",
       "sendToSubscriptions": true,
       "saveToCds": true,
-      "outputDataModelName": "mdmproduct",
+      "outputDataModelName": "douglasmdmproduct",
       "saveToUnified": true,
       "cronExpressions": [
         "0 */5 * * * ?"
@@ -13,13 +13,13 @@
       "sourceEntities": {
         "dataModels": [
           {
-            "dataModelName": "mdmproduct"
+            "dataModelName": "jecatatymdmproduct"
           }
         ],
         "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "product"
+            "stagingName": "stagingdouglasproduct"
           }
         ]
       }

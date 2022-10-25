@@ -1,0 +1,180 @@
+{
+    "batch": {
+        "processes": [
+            {
+                "algorithmDescription": {
+                    "en-US": "Create all data files, one for each device with all available data.",
+                    "pt-BR": "Cria os arquivos de dados, um arquivo para cada dispositivo com todas as marcações disponíveis.",
+                    "pt-br": "Cria os arquivos de dados, um arquivo para cada dispositivo com todas as marcações disponíveis."
+                },
+                "algorithmName": "export_receipts",
+                "algorithmTitle": {
+                    "en-US": "Data file creation",
+                    "pt-BR": "Gera arquivo de marcações"
+                },
+                "dataModels": [
+                    "clockinrecords"
+                ],
+                "instanceProperties": {
+                    "properties": {
+                        "preemptible": false,
+                        "dockerName": "carol-clockin-backoffice",
+                        "instanceType": "c1.nano"
+                    }
+                },
+                "name": "clockin_export_data"
+            },
+            {
+                "algorithmDescription": {
+                    "en-US": "Update the NSR (record's sequential number) and create receipt's image for each clock-in record.",
+                    "pt-BR": "Atualiza o NSR (número sequencial de registro) e cria a imagem com o comprovante da batida de ponto.",
+                    "pt-br": "Atualiza o NSR (número sequencial de registro) e cria a imagem com o comprovante da batida de ponto."
+                },
+                "algorithmName": "compute_nsr",
+                "algorithmTitle": {
+                    "en-US": "NSR updating and receipt creation",
+                    "pt-BR": "Cria o NSR e o recibo do ponto"
+                },
+                "dataModels": [
+                    "clockinrecords"
+                ],
+                "instanceProperties": {
+                    "properties": {
+                        "preemptible": false,
+                        "dockerName": "carol-clockin-backoffice",
+                        "instanceType": "c1.nano"
+                    }
+                },
+                "name": "clockin_processing_nsr"
+            },
+            {
+                "algorithmDescription": {
+                    "en-US": "Send an SMS or Email to employees with clock-in records.",
+                    "pt-BR": "Envia um SMS ou e-mail para os funcionários com os dados da batida de ponto.",
+                    "pt-br": "Envia um SMS ou e-mail para os funcionários com os dados da batida de ponto."
+                },
+                "algorithmName": "send_notifications",
+                "algorithmTitle": {
+                    "en-US": "Send Receipt Email/SMS",
+                    "pt-BR": "Envia Comprovante por Email/SMS"
+                },
+                "dataModels": [
+                    "clockinrecords"
+                ],
+                "instanceProperties": {
+                    "properties": {
+                        "preemptible": false,
+                        "dockerName": "carol-clockin-backoffice",
+                        "instanceType": "c1.nano"
+                    }
+                },
+                "name": "send_sms"
+            },
+            {
+                "algorithmDescription": {
+                    "en-US": "Generate a file with face encodings (DNA) to update mobile devices running Carol Clock-In app.",
+                    "pt-BR": "Gera o arquivo com 'face encodings' (DNA) para atualizar o dispositivos móveis rodando o aplicativo Carol Clock-in.",
+                    "pt-br": "Gera o arquivo com 'face encodings' (DNA) para atualizar o dispositivos móveis rodando o aplicativo Carol Clock-in."
+                },
+                "algorithmName": "generate_dat_files",
+                "algorithmTitle": {
+                    "en-US": "Generate Image DB file",
+                    "pt-BR": "Gera banco de imagem"
+                },
+                "dataModels": [
+                    "employee",
+                    "image"
+                ],
+                "instanceProperties": {
+                    "properties": {
+                        "preemptible": false,
+                        "dockerName": "carol-clockin-face-dna",
+                        "instanceType": "c1.medium"
+                    }
+                },
+                "name": "generate_dat_files"
+            },
+            {
+                "algorithmDescription": {
+                    "en-US": "Process to validate the Clock-Ins and detect fraud: photos or videos.",
+                    "pt-BR": "Processo para validar fraude nas marcações: fotos ou vídeos."
+                },
+                "algorithmName": "fraud_detection",
+                "algorithmTitle": {
+                    "en-US": "Fraud Detection",
+                    "pt-BR": "Detecção de Fraude"
+                },
+                "dataModels": [
+                    "clockinrecords"
+                ],
+                "instanceProperties": {
+                    "properties": {
+                        "preemptible": false,
+                        "dockerName": "carol-clockin-fraud-detection",
+                        "instanceType": "c1.medium"
+                    }
+                },
+                "name": "fraud_detection"
+            },
+            {
+                "algorithmDescription": {
+                    "pt-BR": "SAP Integration App",
+                    "en-US": "SAP Integration App"
+                },
+                "algorithmName": "sapintegrationapp",
+                "algorithmTitle": {
+                    "pt-BR": "SAP Integration App",
+                    "en-US": "SAP Integration App"
+                },
+                "instanceProperties": {
+                    "environments": {
+                        "WORKERS": "4",
+                        "PROCESS_TYPE": "ALL"
+                    },
+                    "properties": {
+                        "dockerName": "sap-integration-app"
+                    }
+                },
+                "name": "sapintegrationapp"
+            }
+        ]
+    },
+    "docker": [
+        {
+            "dockerName": "carol-clockin-backoffice",
+            "dockerTag": "4.0.2",
+            "gitBranch": "master",
+            "gitPath": "/batch-app",
+            "instanceType": "c1.medium",
+            "gitDockerfileName": "Dockerfile",
+            "gitRepoUrl": "https://github.com/totvslabs/clockin-carolapp"
+        },
+        {
+            "dockerName": "carol-clockin-face-dna",
+            "dockerTag": "3.10.13",
+            "gitBranch": "master",
+            "gitPath": "/",
+            "instanceType": "c1.medium",
+            "gitDockerfileName": "Dockerfile",
+            "gitRepoUrl": "https://github.com/totvslabs/clockin-face-recognition"
+        },
+        {
+            "dockerName": "carol-clockin-fraud-detection",
+            "dockerTag": "4.0.0",
+            "gitBranch": "master",
+            "gitPath": "/",
+            "instanceType": "c1.medium",
+            "gitDockerfileName": "Dockerfile",
+            "gitRepoUrl": "https://github.com/totvslabs/clockin-face-fraud-detection"
+        },
+        {
+            "dockerName": "sap-integration-app",
+            "dockerTag": "0.0.7",
+            "gitBranch": "master",
+            "gitPath": "/sap-integration-app",
+            "instanceType": "c1.small",
+            "gitDockerfileName": "Dockerfile",
+            "gitRepoUrl": "https://github.com/totvslabs/clockin-carolapp"
+        }
+    ]
+}
