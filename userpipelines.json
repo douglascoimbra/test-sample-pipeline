@@ -1,6 +1,7 @@
 {
   "pipelines": [
     {
+      "pipelineName": "user_main",
       "processScript": "mdmusercsql",
       "sendToSubscriptions": true,
       "saveToCds": true,
