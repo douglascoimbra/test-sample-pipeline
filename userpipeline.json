@@ -9,7 +9,7 @@
   },
   "pipelines": [
     {
-      "pipelineName": "product_main",
+      "pipelineName": "user_main",
       "pipelineDescription": "Pipeline based to create users through SQL Process",
       "outputDataModelName": "mdmuser",
       "overlapDeltaMinutes": 30,
@@ -37,5 +37,3 @@
 ],
              }
     }
-
-}
