@@ -2,7 +2,7 @@
   "pipelines": [
     {
       "pipelineName": "user_main",
-      "pipelineDescription": "Pipeline for user creation Through SQL Process,
+      "pipelineDescription": "Pipeline for user creation Through SQL Process",
       "processScript": "mdmusercsql",
       "sendToSubscriptions": true,
       "saveToCds": true,
