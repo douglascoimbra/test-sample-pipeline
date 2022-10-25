@@ -11,7 +11,6 @@
       "cronExpressions": [
         "0 */5 0 ? * * *"
       ],
-      "overlapDeltaMinutes": 0,
       "sourceEntities": {
         "dataModels": [
           {
