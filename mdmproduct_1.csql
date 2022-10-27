@@ -16,7 +16,7 @@ WITH product AS (
             (address[SAFE_ORDINAL(1)].city) AS mdmcity,
             (address[SAFE_ORDINAL(1)].state) AS mdmstate,
             (address[SAFE_ORDINAL(1)].country) AS mdmcountry
-            (address[SAFE_ORDINAL(1)].birthdate) AS cronus
+            (address[SAFE_ORDINAL(1)].birthdate) AS cronus,
         )  as mdmaddress,
         searchplace AS homeplace
         --metadata--
