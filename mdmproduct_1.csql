@@ -5,7 +5,7 @@ WITH product AS (
         productprice AS mdmunitvalue,
         image AS mdmimage,
         category AS mdmcategoryname,
-        stg.purchasedate AS cronus
+        stg.purchasedate AS cronus,
         (SELECT AS STRUCT
             (address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
             (address[SAFE_ORDINAL(1)].addresscoordinates) AS mdmcoordinates,
