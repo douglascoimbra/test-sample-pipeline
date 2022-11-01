@@ -5,6 +5,7 @@ WITH product AS (
         productprice AS mdmunitvalue,
         image AS mdmimage,
         category AS mdmcategoryname,
+        stg.purchasedate AS cronus,
         (SELECT AS STRUCT
             (address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
             (address[SAFE_ORDINAL(1)].addresscoordinates) AS mdmcoordinates,
@@ -14,7 +15,8 @@ WITH product AS (
             (address[SAFE_ORDINAL(1)].zipcode) AS mdmzipcode,
             (address[SAFE_ORDINAL(1)].city) AS mdmcity,
             (address[SAFE_ORDINAL(1)].state) AS mdmstate,
-            (address[SAFE_ORDINAL(1)].country) AS mdmcountry
+            (address[SAFE_ORDINAL(1)].country) AS mdmcountry,
+            (address[SAFE_ORDINAL(1)].birthdate) AS cronus
         )  as mdmaddress,
         searchplace AS homeplace
         --metadata--
