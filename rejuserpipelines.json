@@ -1,6 +1,7 @@
 {
   "pipelines": [
     {
+      "pipelineName": "rejuser_main",
       "processScript": "mdmrejuser.csql",
       "sendToSubscriptions": false,
       "saveToCds": true,
