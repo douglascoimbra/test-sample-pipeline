@@ -6,6 +6,8 @@
       "sendToSubscriptions": false,
       "saveToCds": true,
       "clearBigQuery": true,
+      "clearclearCds": true,
+      "clearRealtime": true,
       "outputDataModelName": "mdmuser",
       "saveToUnified": true,
       "cronExpressions": [
