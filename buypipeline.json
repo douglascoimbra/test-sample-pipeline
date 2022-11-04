@@ -1,6 +1,7 @@
 {
   "pipelines": [
     {
+      "pipelineName": "my_purchase_main",
       "processScript": "mdmcompra.csql",
       "sendToSubscriptions": true,
       "saveToCds": true,
