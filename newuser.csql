@@ -16,7 +16,7 @@ CONTAINS_SUBSTR(stg.gender, 'F') AS mdmDeleted
     FROM (
       SELECT ROW_NUMBER() OVER (partition BY mdmId ORDER BY mdmCounterForEntity DESC) ranking, *
       FROM stg_nlp_usertable
-      --timestamp--
+      --timestamp-- where stg.mdmCounterForEntity > {{start_from}}
     )
     WHERE ranking = 1
   ) AS stg
