@@ -1,0 +1,41 @@
+WITH usertable_mdmuser AS (
+SELECT
+stg.id AS mdmactivitycode,
+stg.name AS mdmname,
+stg.email AS mdmlogin,
+stg.role AS mdmroles,
+stg.phone AS mdmphone,
+stg.alwaysFalse AS mdmshouldsendwelcomeemail,
+stg.alwaysTrue AS mdmshouldcreateuser,
+stg.alwaysTrue AS mdmisactive,
+stg.alwaysTrue AS mdmallowcaroluiaccess,
+CONTAINS_SUBSTR(stg.gender, 'F') AS mdmDeleted
+    --metadata--
+  FROM (
+    SELECT * EXCEPT(ranking)
+    FROM (
+      SELECT ROW_NUMBER() OVER (partition BY mdmId ORDER BY mdmCounterForEntity DESC) ranking, *
+      FROM stg_nlp_usertable
+      --timestamp--
+    )
+    WHERE ranking = 1
+  ) AS stg
+),
+lookup_mdmuser AS (
+  SELECT *
+  FROM mdmuser
+  WHERE mdmDeleted IS NULL
+  OR mdmDeleted = false
+),
+combinedSources AS (
+  SELECT * FROM usertable_mdmuser
+),
+processedData AS (
+  SELECT *
+  FROM combinedSources
+  -- WHERE
+  -- rejection rules
+)
+
+SELECT * FROM processedData
+
