@@ -1,7 +1,7 @@
 {
   "pipelines": [
     {
-      "pipelineName": "my_purchase_main",
+      "pipelineName": "two_stagings_main",
       "processScript": "mdmcompra.csql",
       "sendToSubscriptions": true,
       "saveToCds": true,
@@ -21,6 +21,10 @@
           {
             "connectorName": "nlp",
             "stagingName": "purchaseorder"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
           }
         ]
       }
