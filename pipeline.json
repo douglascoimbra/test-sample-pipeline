@@ -54,7 +54,8 @@
       "saveToRealtime": true,
       "sendToSubscriptions": true,
       "cronExpressions": [
-        "0 10,20,30,40,50 * * * ?"
+        "0 0/5 * ? * MON-FRI *",
+        "0 0/15 * ? * SAT,SUN *"
       ],
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
