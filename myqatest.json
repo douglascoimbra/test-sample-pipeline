@@ -1,0 +1,28 @@
+{
+  "pipelines": [
+    {
+      "processScript": "myproduct.csql",
+      "sendToSubscriptions": false,
+      "saveToCds": false,
+      "outputDataModelName": "clockinattempts",
+      "saveToUnified": false,
+      "cronExpressions": [
+        "0 */05 * * * ?"
+      ],
+      "overlapDeltaMinutes": 30,
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "clockinattempts"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "clockinmobile",
+            "stagingName": "clockinfraudscore"
+          }
+        ]
+      }
+    }
+  ]
+}
