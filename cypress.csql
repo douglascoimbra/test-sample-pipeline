@@ -1,0 +1,12 @@
+SELECT
+    stg.id AS mdmbarcode,
+    stg.alwaystrue AS mdmsecret,
+    stg.productname as mdmname,
+    stg.category as mdmdescription,
+    stg.searchplace AS homeplace,
+    stg.purchasedate AS cronus,
+    stg.birthdate AS mdmregisterdate,
+    CONTAINS_SUBSTR(stg.category, 'Functionize') AS mdmDeleted
+    --metadata{sql,cypresstable}--
+  FROM stg_sql_cypresstable as stg
+    --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > {{start_from}}

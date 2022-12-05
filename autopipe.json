@@ -1,0 +1,29 @@
+{
+  "pipelines": [
+    {
+      "processScript": "cypress.csql",
+      "pipelineName": "cypress_main",
+      "sendToSubscriptions": false,
+      "saveToCds": true,
+      "outputDataModelName": "sqldmcypress",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 */5 0 ? * * *"
+      ],
+      "overlapDeltaMinutes": 70,
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "sqldmcypress"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "sql",
+            "stagingName": "cypresstable"
+          }
+        ]
+      }
+    }
+  ]
+}
