@@ -5,6 +5,7 @@
       "pipelineName": "cypress_main",
       "sendToSubscriptions": false,
       "saveToCds": true,
+      "saveToRealtime": true,
       "outputDataModelName": "sqldmcypress",
       "saveToUnified": true,
       "cronExpressions": [
