@@ -1,8 +1,8 @@
 SELECT
     stg.id AS mdmbarcode,
     stg.alwaystrue AS mdmsecret,
-    stg.productname as mdmname,
-    stg.category as mdmdescription,
+    stg.productname AS mdmname,
+    stg.category AS mdmdescription,
     stg.searchplace AS homeplace,
     stg.purchasedate AS cronus
     --metadata{sql,cypresstable}--
