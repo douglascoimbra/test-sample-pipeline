@@ -3,7 +3,7 @@ SELECT
     stg.alwaystrue AS mdmsecret,
     stg.productname AS mdmname,
     stg.category AS mdmdescription,
-    stg.searchplace AS homeplace,
+    stg.searchplace AS homeplace
     --metadata{sql,cypresstable}--
   FROM stg_sql_cypresstable as stg
     --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > {{start_from}}
