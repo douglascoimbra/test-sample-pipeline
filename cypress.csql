@@ -9,4 +9,4 @@ SELECT
     CONTAINS_SUBSTR(stg.category, 'Functionize') AS mdmDeleted
     --metadata{sql,cypresstable}--
   FROM stg_sql_cypresstable as stg
-    --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > {{start_from}}
+    --timestamp-- where stg.mdmCounterForEntity > {{start_from}}
