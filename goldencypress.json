@@ -1,0 +1,30 @@
+{
+  "pipelines": [
+    {
+      "pipelineName": "goldencypress_main",
+      "processScript": "cypressgolden.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "saveToRealtime": true,
+      "outputDataModelName": "sqldmcypress",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 */5 0 ? * * *"
+      ],
+      "overlapDeltaMinutes": 30,
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "sqldmcypress"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "sql",
+            "stagingName": "cypresstable"
+          }
+        ]
+      }
+    }
+  ]
+}
