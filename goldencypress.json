@@ -15,7 +15,7 @@
       "sourceEntities": {
         "dataModels": [
           {
-            "dataModelName": "sqldmcypress"
+            "dataModelName": "dmsqlcypress"
           }
         ],
         "stagings": [
