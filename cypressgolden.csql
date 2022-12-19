@@ -6,6 +6,6 @@ SELECT
     stg.searchplace AS homeplace,
     stg.purchasedate AS cronus,
     stg.birthdate AS mdmregisterdate
-    --metadata{sql,cypresstable}--
-  FROM stg_sql_cypresstable as stg
+    --metadata{sql,cypresstest}--
+  FROM stg_sql_cypresstest as stg
     --timestamp-- where stg.mdmCounterForEntity > {{start_from}}
