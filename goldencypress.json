@@ -21,7 +21,7 @@
         "stagings": [
           {
             "connectorName": "sql",
-            "stagingName": "cypresstable"
+            "stagingName": "cypresstest"
           }
         ]
       }
