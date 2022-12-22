@@ -11,6 +11,7 @@
       "cronExpressions": [
         "0 */5 0 ? * * *"
       ],
+      "timeZone": "America/Sao_Paulo",
       "overlapDeltaMinutes": 70,
       "sourceEntities": {
         "dataModels": [
