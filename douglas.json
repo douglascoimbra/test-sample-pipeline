@@ -11,7 +11,7 @@
       "pipelineName": "product_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
-      "overlapDeltaMinutes": 30,
+      "overlapDeltaMinutes": 70,
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
