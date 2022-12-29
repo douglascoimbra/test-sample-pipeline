@@ -1,14 +1,13 @@
 {
   "defaults": {
-    "cronExpressions": [
-      "0 */1 0 ? * * *"
-    ],
+    "cronExpressions": [],
     "prepareScripts": [
       "prepare.sql"
     ]
   },
   "pipelines": [
     {
+      "cronExpressions": ["0 0,15,30,45 * ? * * 2099"],
       "pipelineName": "product_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
