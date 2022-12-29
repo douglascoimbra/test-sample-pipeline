@@ -7,7 +7,7 @@
   },
   "pipelines": [
     {
-      "cronExpressions": ["0 0,15,30,45 * ? * * 2022"],
+      "cronExpressions": ["0 0,15,30,45 * ? * * 2029"],
       "pipelineName": "product_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
