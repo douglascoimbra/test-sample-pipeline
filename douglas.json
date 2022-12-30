@@ -8,7 +8,7 @@
   "pipelines": [
     {
       "cronExpressions": ["0 0,15,30,45 * ? * * 2022"],
-      "pipelineName": "product_main",
+      "pipelineName": "dougproduct_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
       "overlapDeltaMinutes": 70,
@@ -41,7 +41,7 @@
     },
     {
       "cronExpressions": ["0 */01 * * * ?"],
-      "pipelineName": "purchaseorder_main",
+      "pipelineName": "dougpurchaseorder_main",
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
       "outputDataModelName": "mdmpurchaseorder",
       "overlapDeltaMinutes": 30,
