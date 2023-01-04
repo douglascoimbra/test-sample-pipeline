@@ -1,0 +1,43 @@
+-- pk: _id
+
+with qa_stg_nlp_product 
+as (
+    SELECT 
+        stg.id as mdmbarcode,
+        stg.productname as mdmname,
+        stg.category as mdmdescription,
+        stg.productprice as mdmunitvalue,
+        ROW_NUMBER() OVER(PARTITION BY stg.id ORDER BY mdmCounterForEntity DESC) AS ranking
+
+        --CONTAINS_SUBSTR(stg.productname, 'banan') AS mdmDeleted
+    --metadata{nlp,product}--
+    from  stg_nlp_product as stg
+    --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
+),
+
+qa_stg_sql_cypresstest 
+as (
+    SELECT 
+        stg.id as mdmbarcode,
+        stg.productname as mdmname,
+        stg.category as mdmdescription,
+        stg.productprice as mdmunitvalue,
+        ROW_NUMBER() OVER(PARTITION BY stg.id ORDER BY mdmCounterForEntity DESC) AS ranking
+
+        --CONTAINS_SUBSTR(stg.productname, 'banan') AS mdmDeleted
+    --metadata{sql,cypresstest}--
+    from  stg_sql_cypresstest as stg
+    --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
+),
+
+mdmproduct as (
+    select * from qa_stg_nlp_product where ranking = 1
+    union all
+    select * from qa_stg_sql_cypresstest where ranking = 1
+)
+
+select * except(ranking),
+(
+    CONTAINS_SUBSTR(mdmname, 'banan')
+) mdmDeleted
+from mdmproduct
