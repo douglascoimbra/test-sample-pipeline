@@ -1,0 +1,42 @@
+{
+  
+  "defaults": {
+    "cronExpressions": [],
+    "prepareScripts": [
+      "prepare.sql"
+    ]
+  },"pipelines": [
+    {
+      "processScript": "qamergcypress.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "outputDataModelName": "mdmproduct",
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "timeZone": "America/Sao_Paulo",
+      "pipelineDescription": "SQL Processing Task with Merge Rules + + ETL Operation + Rejection Records Rule",
+      "cronExpressions": [
+        "0 */01 * * * ?"
+      ],
+      "overlapDeltaMinutes": 73,
+      "pipelineName": "cypress_etl_merge_sql",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmproduct"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "sql",
+            "stagingName": "cypresstest"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
+          }
+        ]
+      }
+    }
+  ]
+}
