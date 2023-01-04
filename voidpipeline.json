@@ -1,0 +1,36 @@
+{
+  "pipelines": [
+    {
+      "processScript": "productvoid.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "pipelineDescription": "Pipeline for the product table, that uses Rejection Rules with Null/Empty/Blank values",
+      "outputDataModelName": "mdmproduct",
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "timeZone": "America/Sao_Paulo",
+      "cronExpressions": [
+        "0 */01 * * * ?"
+      ],
+      "overlapDeltaMinutes": 74,
+      "pipelineName": "cypress_void_main_rejrules",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmproduct"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "sql",
+            "stagingName": "cypresstest"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
+          }
+        ]
+      }
+    }
+  ]
+}
