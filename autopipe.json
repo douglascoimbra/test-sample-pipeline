@@ -1,8 +1,8 @@
 {
   "pipelines": [
     {
-      "pipelineName": "goldencypress_main",
-      "processScript": "cypressgolden.csql",
+      "pipelineName": "rej_func_cypress_main",
+      "processScript": "cypress.csql",
       "sendToSubscriptions": true,
       "saveToCds": true,
       "saveToRealtime": true,
