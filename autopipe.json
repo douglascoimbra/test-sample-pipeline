@@ -1,22 +1,21 @@
 {
   "pipelines": [
     {
-      "processScript": "cypress.csql",
-      "pipelineName": "cypress_main",
-      "sendToSubscriptions": false,
+      "pipelineName": "goldencypress_main",
+      "processScript": "cypressgolden.csql",
+      "sendToSubscriptions": true,
       "saveToCds": true,
       "saveToRealtime": true,
-      "outputDataModelName": "sqldmcypress",
+      "outputDataModelName": "dmsqlcypress",
       "saveToUnified": true,
       "cronExpressions": [
-        "0 */5 0 ? * * *"
+        "0 */1 0 ? * * *"
       ],
-      "timeZone": "America/Sao_Paulo",
-      "overlapDeltaMinutes": 70,
+      "overlapDeltaMinutes": 30,
       "sourceEntities": {
         "dataModels": [
           {
-            "dataModelName": "sqldmcypress"
+            "dataModelName": "dmsqlcypress"
           }
         ],
         "stagings": [
