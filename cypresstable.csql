@@ -1,0 +1,28 @@
+with qa_stg_sql_cypresstable
+as (
+    SELECT 
+    stg.id AS mdmbarcode,
+    stg.alwaystrue AS mdmsecret,
+    stg.productname AS mdmname,
+    stg.category AS mdmdescription,
+    stg.searchplace AS homeplace,
+    stg.purchasedate AS cronus,
+    stg.birthdate AS mdmregisterdate,
+    ROW_NUMBER() OVER(PARTITION BY stg.id ORDER BY mdmCounterForEntity DESC) AS ranking
+    --metadata{sql,cypresstable}--
+    from  stg_sql_cypresstable as stg
+    
+    --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
+),
+
+dmsqlcypress as (
+  select * from qa_stg_sql_cypresstable where ranking = 1
+)
+
+select * except(ranking),
+(
+    (mdmname is null) or (mdmname = '')
+    or (mdmbarcode is null) or (mdmbarcode  = '')
+    or (mdmdescription is null) or (mdmdescription  = 'Functionize')
+) mdmDeleted
+from dmsqlcypress

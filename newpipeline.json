@@ -1,0 +1,36 @@
+{
+  "pipelines": [
+    {
+      "processScript": "purchprodnewsql.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "saveToRealtime": true,
+      "pipelineDescription": "Pipeline for the product & purchaseorder tables, that uses rejects empties and blanks values",
+      "timeZone": "America/Sao_Paulo",
+      "outputDataModelName": "mdmproduct",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 */01 * * * ?"
+      ],
+      "overlapDeltaMinutes": 76,
+      "pipelineName": "newtask_sandbox",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmproduct"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
+          }
+        ]
+      }
+    }
+  ]
+}
