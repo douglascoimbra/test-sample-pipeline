@@ -7,7 +7,10 @@
   },
   "pipelines": [
     {
-      "cronExpressions": ["0 */01 * * * ?"],
+      "cronExpressions": [
+        "0 0/5 * ? * MON-FRI *",
+        "0 0/15 * ? * SAT,SUN *"
+      ],
       "pipelineName": "dougproduct_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
@@ -40,7 +43,10 @@
       }
     },
     {
-      "cronExpressions": ["0 */01 * * * ?"],
+      "cronExpressions": [
+        "0 0/5 * ? * MON-FRI *",
+        "0 0/15 * ? * SAT,SUN *"
+      ],
       "pipelineName": "dougpurchaseorder_main",
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_purchaseorder",
       "outputDataModelName": "mdmpurchaseorder",
