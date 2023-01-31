@@ -1,9 +1,8 @@
 WITH usertable_mdmuser AS (
 SELECT
-stg.id AS mdmactivitycode,
 stg.name AS mdmname,
-stg.name AS mdmpassword,
-stg.email AS mdmlogin,
+stg.password AS mdmpassword,
+stg.login AS mdmlogin,
 stg.roles AS mdmroles,
 stg.phonenumber AS mdmphonenumber,
 stg.alwaysFalse AS mdmshouldsendwelcomeemail,
