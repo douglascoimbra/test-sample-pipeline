@@ -36,5 +36,4 @@ processedData AS (
   -- WHERE
   -- rejection rules
 )
-
 SELECT * FROM processedData
