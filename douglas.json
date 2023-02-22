@@ -8,8 +8,7 @@
   "pipelines": [
     {
       "cronExpressions": [
-        "0 0/5 * ? * MON-FRI *",
-        "0 0/15 * ? * SAT,SUN *"
+        "0 */1 0 ? * * *"
       ],
       "pipelineName": "dougproduct_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
@@ -44,8 +43,7 @@
     },
     {
       "cronExpressions": [
-        "0 0/5 * ? * MON-FRI *",
-        "0 0/15 * ? * SAT,SUN *"
+        "0 */1 0 ? * * *"
       ],
       "pipelineName": "dougpurchaseorder_main",
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_purchaseorder",
