@@ -1,10 +1,10 @@
 WITH usertable_mdmuser AS (
 SELECT
-stg.id AS mdmactivitycode,
 stg.name AS mdmname,
-stg.email AS mdmlogin,
-stg.role AS mdmroles,
-stg.phone AS mdmphone,
+stg.password AS mdmpassword,
+stg.login AS mdmlogin,
+stg.roles AS mdmroles,
+stg.phonenumber AS mdmphonenumber,
 stg.alwaysFalse AS mdmshouldsendwelcomeemail,
 stg.alwaysTrue AS mdmshouldcreateuser,
 stg.alwaysTrue AS mdmisactive,
@@ -16,7 +16,7 @@ CONTAINS_SUBSTR(stg.gender, 'F') AS mdmDeleted
     FROM (
       SELECT ROW_NUMBER() OVER (partition BY mdmId ORDER BY mdmCounterForEntity DESC) ranking, *
       FROM stg_nlp_usertable
-      --timestamp-- where stg.mdmCounterForEntity > {{start_from}}
+      --timestamp--
     )
     WHERE ranking = 1
   ) AS stg
@@ -36,6 +36,4 @@ processedData AS (
   -- WHERE
   -- rejection rules
 )
-
 SELECT * FROM processedData
-

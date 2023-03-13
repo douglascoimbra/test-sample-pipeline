@@ -7,11 +7,13 @@
   },
   "pipelines": [
     {
-      "cronExpressions": ["0 0,15,30,45 * ? * * 2022"],
+      "cronExpressions": [
+        "0 */5 0 ? * * *"
+      ],
       "pipelineName": "dougproduct_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
-      "overlapDeltaMinutes": 70,
+      "overlapDeltaMinutes": 120,
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
@@ -40,7 +42,9 @@
       }
     },
     {
-      "cronExpressions": ["0 */01 * * * ?"],
+      "cronExpressions": [
+        "0 */5 0 ? * * *"
+      ],
       "pipelineName": "dougpurchaseorder_main",
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_purchaseorder",
       "outputDataModelName": "mdmpurchaseorder",
