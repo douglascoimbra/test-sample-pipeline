@@ -1,0 +1,30 @@
+{
+  "pipelines": [
+    {
+      "processScript": "qacyp.csql",
+      "sendToSubscriptions": false,
+      "saveToCds": false,
+      "outputDataModelName": "dmsqlcypress",
+      "saveToUnified": false,
+      "timeZone": "America/Sao_Paulo",
+      "cronExpressions": [
+        "QA 0 */01 * * * ?"
+      ],
+      "overlapDeltaMinutes": 2300,
+      "pipelineName": "cobaia_name",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "dmsqlcypress"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "sql",
+            "stagingName": "cypresstest"
+          }
+        ]
+      }
+    }
+  ]
+}

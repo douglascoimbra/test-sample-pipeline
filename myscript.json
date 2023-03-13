@@ -1,0 +1,29 @@
+{
+  "pipelines": [
+    {
+      "processScript": "qaprocess.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "outputDataModelName": "dmsqlcypress",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 */2 * * * ?"
+      ],
+      "overlapDeltaMinutes": 78,
+      "pipelineName": "myscrypt_main",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "dmsqlcypress"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "sql",
+            "stagingName": "cypresstest"
+          }
+        ]
+      }
+    }
+  ]
+}

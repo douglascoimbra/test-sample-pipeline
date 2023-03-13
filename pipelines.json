@@ -7,7 +7,7 @@
       "outputDataModelName": "douglasmdmproduct",
       "saveToUnified": true,
       "cronExpressions": [
-        "0 */5 * * * ?"
+        "Cobaia0 */5 * * * ?"
       ],
       "overlapDeltaMinutes": 92000,
       "sourceEntities": {
@@ -22,6 +22,56 @@
             "stagingName": "stagingdouglasproduct"
           }
         ]
+      }
+    },
+    {
+      "processScript": "mdmcompra.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "outputDataModelName": "clockinrecords",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 0 7,19 * * ?"
+      ],
+      "overlapDeltaMinutes": 5645,
+      "pipelineName": "qadgou",
+      "sourceEntities": {
+        "dataModels": [],
+        "stagings": []
+      }
+    },
+    {
+      "processScript": "chamam.csql",
+      "sendToSubscriptions": false,
+      "saveToCds": true,
+      "outputDataModelName": "dmsqlcypress",
+      "saveToUnified": true,
+      "timeZone": "America/Sao_Paulo",
+      "cronExpressions": [
+        "0 */03 * * * ?"
+      ],
+      "overlapDeltaMinutes": 35,
+      "pipelineName": "cron_qa_main",
+      "sourceEntities": {
+        "dataModels": [],
+        "stagings": []
+      }
+    },
+    {
+      "processScript": "cypress.csql",
+      "sendToSubscriptions": false,
+      "saveToCds": false,
+      "outputDataModelName": "devicesynccurrent",
+      "saveToUnified": false,
+      "timeZone": "America/Sao_Paulo",
+      "cronExpressions": [
+        "0 */30 * * * ?"
+      ],
+      "overlapDeltaMinutes": 353,
+      "pipelineName": "qa_main",
+      "sourceEntities": {
+        "dataModels": [],
+        "stagings": []
       }
     }
   ]

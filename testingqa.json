@@ -1,0 +1,20 @@
+{
+  "pipelines": [
+    {
+      "processScript": "qacyp.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "outputDataModelName": "dmsqlcypress",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 */30 * * * ?"
+      ],
+      "overlapDeltaMinutes": 55,
+      "pipelineName": "qatesting",
+      "sourceEntities": {
+        "dataModels": [],
+        "stagings": []
+      }
+    }
+  ]
+}

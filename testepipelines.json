@@ -1,0 +1,20 @@
+{
+  "pipelines": [
+    {
+      "processScript": "newuser.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "outputDataModelName": "mdmcompany",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 */30 * * * ?"
+      ],
+      "overlapDeltaMinutes": 76,
+      "pipelineName": "myqa",
+      "sourceEntities": {
+        "dataModels": [],
+        "stagings": []
+      }
+    }
+  ]
+}
