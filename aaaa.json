@@ -1,0 +1,30 @@
+{
+  "pipelines": [
+    {
+      "pipelineName": "my_product_main",
+      "processScript": "myproduct.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "saveToRealtime": true,
+      "outputDataModelName": "mdmproduct",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 */5 0 ? * * *"
+      ],
+      "overlapDeltaMinutes": 30000,
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmproduct"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
+          }
+        ]
+      }
+    }
+  ]
+}
