@@ -6,6 +6,7 @@
       "sendToSubscriptions": true,
       "saveToCds": true,
       "outputDataModelName": "mdmpurchaseorder",
+      "timeZone": "America/Sao_Paulo",
       "saveToUnified": true,
       "cronExpressions": [
         "0 */02 * * * ?"
