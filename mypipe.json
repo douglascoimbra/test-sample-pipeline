@@ -9,7 +9,7 @@
       "outputDataModelName": "mdmproduct",
       "saveToUnified": true,
       "cronExpressions": [
-        "0 */02 * * * ?"
+        "0 */07 * * * ?"
       ],
       "overlapDeltaMinutes": 30000,
       "sourceEntities": {
