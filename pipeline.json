@@ -22,7 +22,6 @@
         "0 0/5 * ? * MON-FRI *",
         "0 0/15 * ? * SAT,SUN *"
       ],
-      "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
         "product_prepare.sql"
       ],
@@ -57,7 +56,6 @@
         "0 0/5 * ? * MON-FRI *",
         "0 0/15 * ? * SAT,SUN *"
       ],
-      "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
         "purchaseorder_prepare.sql"
       ],
