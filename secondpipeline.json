@@ -17,6 +17,7 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": true,
+      "clearBigQuery": true,
       "saveToRealtime": true,
       "cronExpressions": [
         "0 10,20,30,40,50 * * * ?"
