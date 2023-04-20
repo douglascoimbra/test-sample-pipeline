@@ -8,15 +8,16 @@ WITH product AS (
         category AS mdmcategoryname,
         ARRAY(
         SELECT AS STRUCT
-            (address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
-            (address[SAFE_ORDINAL(1)].addresscoordinates) AS mdmcoordinates,
-            (address[SAFE_ORDINAL(1)].address1) AS mdmaddress1,
-            (address[SAFE_ORDINAL(1)].address2) AS mdmaddress2,
-            (address[SAFE_ORDINAL(1)].address3) AS mdmaddress3,
-            (address[SAFE_ORDINAL(1)].zipcode) AS mdmzipcode,
-            (address[SAFE_ORDINAL(1)].city) AS mdmcity,
-            (address[SAFE_ORDINAL(1)].state) AS mdmstate,
-            (address[SAFE_ORDINAL(1)].country) AS mdmcountry
+            (JSON_EXTRACT_SCALAR(address, '$.addresstype')) mdmaddresstype
+            --(address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
+            --(address[SAFE_ORDINAL(1)].addresscoordinates) AS mdmcoordinates,
+            --(address[SAFE_ORDINAL(1)].address1) AS mdmaddress1,
+            --(address[SAFE_ORDINAL(1)].address2) AS mdmaddress2,
+            --(address[SAFE_ORDINAL(1)].address3) AS mdmaddress3,
+            --(address[SAFE_ORDINAL(1)].zipcode) AS mdmzipcode,
+            --(address[SAFE_ORDINAL(1)].city) AS mdmcity,
+            --(address[SAFE_ORDINAL(1)].state) AS mdmstate,
+            --(address[SAFE_ORDINAL(1)].country) AS mdmcountry
         )  as mdmaddress,
         searchplace AS homeplace
         --metadata--
