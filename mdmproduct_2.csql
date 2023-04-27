@@ -8,18 +8,17 @@ WITH product AS (
         category AS mdmcategoryname,
         ARRAY(
         SELECT AS STRUCT
-            (JSON_EXTRACT_SCALAR(address, '$.addresstype')) mdmaddresstype
-            --(address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
-            --(address[SAFE_ORDINAL(1)].addresscoordinates) AS mdmcoordinates,
-            --(address[SAFE_ORDINAL(1)].address1) AS mdmaddress1,
-            --(address[SAFE_ORDINAL(1)].address2) AS mdmaddress2,
-            --(address[SAFE_ORDINAL(1)].address3) AS mdmaddress3,
-            --(address[SAFE_ORDINAL(1)].zipcode) AS mdmzipcode,
-            --(address[SAFE_ORDINAL(1)].city) AS mdmcity,
-            --(address[SAFE_ORDINAL(1)].state) AS mdmstate,
-            --(address[SAFE_ORDINAL(1)].country) AS mdmcountry
+            (JSON_VALUE(address, '$[0].addresstype')) AS mdmaddresstype,
+            (JSON_VALUE(address, '$[0].addresscoordinates')) AS mdmcoordinates,
+            (JSON_VALUE(address, '$[0].address1')) AS mdmaddress1,
+            (JSON_VALUE(address, '$[0].address2')) AS mdmaddress2,
+            (JSON_VALUE(address, '$[0].address3')) AS mdmaddress3,
+            (JSON_VALUE(address, '$[0].zipcode')) AS mdmzipcode,
+            (JSON_VALUE(address, '$[0].city')) AS mdmcity,
+            (JSON_VALUE(address, '$[0].state')) AS mdmstate,
+            (JSON_VALUE(address, '$[0].country')) AS mdmcountry  
         )  as mdmaddress,
-        searchplace AS houseplace
+        searchplace AS homeplace
         --metadata--
     FROM
         stg_nlp_product as stg
