@@ -6,6 +6,7 @@ WITH product AS (
         image AS mdmimage,
         true AS __resolveGeolocation,
         category AS mdmcategoryname,
+        birthdate AS mdmregisterdate,
         ARRAY(
         SELECT AS STRUCT
             (address[SAFE_ORDINAL(1)].addresstype) AS mdmaddresstype,
