@@ -7,4 +7,4 @@ SELECT
     --metadata{nlp,product}--
 from stg_nlp_product as stg
 --timestamp-- where stg.mdmCounterForEntity > {{start_from}}
---tenantIds{stg}--
+--tenantIds{stg, mdmTenantId}--
