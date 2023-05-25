@@ -6,5 +6,6 @@ SELECT
     CONTAINS_SUBSTR(stg.productname, 'banan') AS mdmDeleted
     --metadata{nlp,product}--
 from stg_nlp_product as stg
---timestamp-- where stg.mdmCounterForEntity > {{start_from}}
---tenantIds{stg, mdmTenantId}--
+where 1=1
+--timestamp-- and stg.mdmCounterForEntity > {{start_from}}
+--tenantIds-- and mdmTenantId {{tenantIds}}
