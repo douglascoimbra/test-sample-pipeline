@@ -17,7 +17,6 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": true,
-      "saveToRealtime": true,
       "cronExpressions": [
         "0 0/5 * ? * MON-FRI *",
         "0 0/15 * ? * SAT,SUN *"
@@ -28,13 +27,10 @@
       "processScript": "product.sql",
       "sourceEntities": {
         "dataModels": [
-
           {
-
-              "dataModelName": "mdmproduct"
-
-           }
-],
+            "dataModelName": "mdmproduct"
+          }
+        ],
         "stagings": [
           {
             "connectorName": "nlp",
@@ -62,17 +58,14 @@
       "processScript": "purchaseorder.sql",
       "sourceEntities": {
         "dataModels": [
-
           {
-
-              "dataModelName": "mdmpurchaseorder"
-
-           }
-],
+            "dataModelName": "mdmpurchaseorder"
+          }
+        ],
         "stagings": [
           {
-            "connectorName": "nlp",
-            "stagingName": "purchaseorder"
+            "connectorName": "datasul",
+            "stagingName": "connectionv2"
           }
         ]
       }
