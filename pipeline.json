@@ -64,7 +64,7 @@
         ],
         "stagings": [
           {
-            "connectorName": "datasul",
+            "connectorName": "linkedin",
             "stagingName": "connectionv2"
           }
         ]
