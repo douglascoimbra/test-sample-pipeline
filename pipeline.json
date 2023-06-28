@@ -64,8 +64,8 @@
         ],
         "stagings": [
           {
-            "connectorName": "linkedin",
-            "stagingName": "connectionv2"
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
           }
         ]
       }
