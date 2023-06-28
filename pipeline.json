@@ -34,7 +34,7 @@
         "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "novonome"
+            "stagingName": "product"
           }
         ]
       }
