@@ -49,8 +49,7 @@
       "saveToRealtime": true,
       "sendToSubscriptions": true,
       "cronExpressions": [
-        "0 0/5 * ? * MON-FRI *",
-        "0 0/15 * ? * SAT,SUN *"
+        "0 */1 0 ? * * *"
       ],
       "prepareScripts": [
         "purchaseorder_prepare.sql"
