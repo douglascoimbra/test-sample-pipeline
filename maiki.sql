@@ -1,9 +1,10 @@
 SELECT 
-    stg.orderid as mdmorderid,
-    stg.customername as mdmcustomername,
-    stg.country as mdmcountry,
-    CONCAT("qawork-", stg.category) as mdmcategoryname,
-    CONTAINS_SUBSTR(stg.country, 'Brazil') AS mdmDeleted
-    --metadata--
-from stg_nlp_maiki as stg
---timestamp-- where stg.mdmCounterForEntity > {{start_from}}
+    stg.id as mdmbarcode,
+    stg.name as mdmname,
+    stg.document as mdmimage,
+    stg.name as mdmdescription
+    --metadata{ds780588,test}--
+from stg_ds780588_test as stg
+where 1=1
+--timestamp-- and stg.mdmCounterForEntity > {{start_from}}
+--tenantIds-- and mdmTenantId IN {{tenantIds}}
