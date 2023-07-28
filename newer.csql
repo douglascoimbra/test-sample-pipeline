@@ -1,0 +1,34 @@
+WITH newer_novo AS (
+  SELECT
+    stg.productname AS mdmname,
+    stg.category AS mdmdescription,
+    stg.id AS mdmbarcode,
+     --metadata--
+  FROM (
+    SELECT * EXCEPT(ranking)
+    FROM (
+      SELECT ROW_NUMBER() OVER (partition BY mdmId ORDER BY mdmCounterForEntity DESC) ranking, *
+      FROM stg_nlp_newer
+      --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
+    )
+    WHERE ranking = 1
+  ) AS stg
+),
+lookup_novo AS (
+  SELECT *
+  FROM novo
+  WHERE mdmDeleted IS NULL
+  OR mdmDeleted = false
+),
+combinedSources AS (
+  SELECT * FROM newer_novo
+),
+processedData AS (
+  SELECT *
+  FROM combinedSources
+  -- WHERE
+  -- rejection rules
+)
+
+SELECT * FROM processedData
+

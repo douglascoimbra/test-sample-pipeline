@@ -1,0 +1,31 @@
+{
+  "pipelines": [
+    {
+      "processScript": "newer.csql",
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "outputDataModelName": "novo",
+      "saveToUnified": true,
+      "timeZone": "America/Sao_Paulo",
+      "cronExpressions": [
+        "0 */1 * * * ?"
+      ],
+      "overlapDeltaMinutes": 300,
+      "pipelineName": "first_main",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "novo"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "newer"
+          }
+        ]
+      }
+    }
+  ]
+}
