@@ -45,7 +45,7 @@
       "cronExpressions": [
         "0 */4 0 ? * * *"
       ],
-      "pipelineName": "dougpurchaseorder_main",
+      "pipelineName": "dougproduct_main",
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_purchaseorder",
       "outputDataModelName": "mdmpurchaseorder",
       "overlapDeltaMinutes": 30,
