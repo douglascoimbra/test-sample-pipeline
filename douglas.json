@@ -8,7 +8,7 @@
   "pipelines": [
     {
       "cronExpressions": [
-        "0 */1 0 ? * * *"
+        "0 * * ? * *"
       ],
       "pipelineName": "dougproduct_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
@@ -43,7 +43,7 @@
     },
     {
       "cronExpressions": [
-        "0 */1 0 ? * * *"
+        "0 * * ? * *"
       ],
       "pipelineName": "dougproduct_main",
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_purchaseorder",
