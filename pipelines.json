@@ -6,6 +6,7 @@
       "saveToCds": true,
       "outputDataModelName": "douglasmdmproduct",
       "saveToUnified": true,
+      "useBatchNotification": true,
       "cronExpressions": [
         "Cobaia0 */5 * * * ?"
       ],
