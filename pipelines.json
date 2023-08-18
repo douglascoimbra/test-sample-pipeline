@@ -1,78 +1,72 @@
 {
+  "defaults": {
+    "cronExpressions": [
+      "0 */5 0 ? * * *"
+    ],
+    "prepareScripts": [
+      "prepare.sql"
+    ]
+  },
   "pipelines": [
     {
-      "processScript": "worong.csql",
-      "sendToSubscriptions": true,
+      "pipelineName": "product_main",
+      "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
+      "outputDataModelName": "mdmproduct",
+      "overlapDeltaMinutes": 30,
       "saveToCds": true,
-      "outputDataModelName": "douglasmdmproduct",
       "saveToUnified": true,
-      "useBatchNotification": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
       "cronExpressions": [
-        "Cobaia0 */5 * * * ?"
+        "0 0/5 * ? * MON-FRI *",
+        "0 0/15 * ? * SAT,SUN *"
       ],
-      "overlapDeltaMinutes": 92000,
+      "prepareScripts": [
+        "product_prepare.sql"
+      ],
+      "processScript": "product.sql",
       "sourceEntities": {
         "dataModels": [
           {
-            "dataModelName": "jecatatymdmproduct"
+            "dataModelName": "mdmproduct"
           }
         ],
         "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "stagingdouglasproduct"
+            "stagingName": "coimbra"
           }
         ]
       }
     },
     {
-      "processScript": "mdmcompra.csql",
+      "pipelineName": "product_main",
+      "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
+      "outputDataModelName": "mdmpurchaseorder",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
       "sendToSubscriptions": true,
-      "saveToCds": true,
-      "outputDataModelName": "clockinrecords",
-      "saveToUnified": true,
       "cronExpressions": [
-        "0 0 7,19 * * ?"
+        "0 */1 0 ? * * *"
       ],
-      "overlapDeltaMinutes": 5645,
-      "pipelineName": "qadgou",
-      "sourceEntities": {
-        "dataModels": [],
-        "stagings": []
-      }
-    },
-    {
-      "processScript": "chamam.csql",
-      "sendToSubscriptions": false,
-      "saveToCds": true,
-      "outputDataModelName": "dmsqlcypress",
-      "saveToUnified": true,
-      "timeZone": "America/Sao_Paulo",
-      "cronExpressions": [
-        "0 */03 * * * ?"
+      "prepareScripts": [
+        "purchaseorder_prepare.sql"
       ],
-      "overlapDeltaMinutes": 35,
-      "pipelineName": "cron_qa_main",
+      "processScript": "purchaseorder.sql",
       "sourceEntities": {
-        "dataModels": [],
-        "stagings": []
-      }
-    },
-    {
-      "processScript": "cypress.csql",
-      "sendToSubscriptions": false,
-      "saveToCds": false,
-      "outputDataModelName": "devicesynccurrent",
-      "saveToUnified": false,
-      "timeZone": "America/Sao_Paulo",
-      "cronExpressions": [
-        "0 */30 * * * ?"
-      ],
-      "overlapDeltaMinutes": 353,
-      "pipelineName": "qa_main",
-      "sourceEntities": {
-        "dataModels": [],
-        "stagings": []
+        "dataModels": [
+          {
+            "dataModelName": "mdmpurchaseorder"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
+          }
+        ]
       }
     }
   ]
