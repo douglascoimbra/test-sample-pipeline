@@ -1,19 +1,81 @@
 {
+  "defaults": {
+    "cronExpressions": [
+      "0 */5 0 ? * * *"
+    ],
+    "prepareScripts": [
+      "prepare.sql"
+    ]
+  },
   "pipelines": [
     {
-      "processScript": "newuser.csql",
-      "sendToSubscriptions": true,
+      "pipelineName": "product_local",
+      "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
+      "outputDataModelName": "mdmproduct",
+      "overlapDeltaMinutes": 30,
       "saveToCds": true,
-      "outputDataModelName": "mdmcompany",
       "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "saveToRealtime": true,
+      "useBatchNotification": true,
       "cronExpressions": [
-        "0 */30 * * * ?"
+        "0 10,20,30,40,50 * * * ?"
       ],
-      "overlapDeltaMinutes": 76,
-      "pipelineName": "myqa",
+      "timeZone": "America/Sao_Paulo",
+      "prepareScripts": [
+        "product_prepare.sql"
+      ],
+      "processScript": "mdmproduct_1.csql",
       "sourceEntities": {
-        "dataModels": [],
-        "stagings": []
+        "dataModels": [
+
+          {
+
+              "dataModelName": "mdmproduct"
+
+           }
+],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
+          }
+        ]
+      }
+    },
+    {
+      "pipelineName": "purchaseorder_local",
+      "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
+      "outputDataModelName": "mdmpurchaseorder",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "cronExpressions": [
+        "0 10,20,30,40,50 * * * ?"
+      ],
+      "timeZone": "America/Sao_Paulo",
+      "prepareScripts": [
+        "purchaseorder_prepare.sql"
+      ],
+      "processScript": "purchaseorder.sql",
+      "sourceEntities": {
+        "dataModels": [
+
+          {
+
+              "dataModelName": "mdmpurchaseorder"
+
+           }
+],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
+          }
+        ]
       }
     }
   ]
