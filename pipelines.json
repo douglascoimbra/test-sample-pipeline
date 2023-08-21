@@ -17,6 +17,7 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": true,
+      "useBatchNotification": true,
       "cronExpressions": [
         "0 0/5 * ? * MON-FRI *",
         "0 0/15 * ? * SAT,SUN *"
