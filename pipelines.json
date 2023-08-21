@@ -41,7 +41,7 @@
       }
     },
     {
-      "pipelineName": "product_main",
+      "pipelineName": "purchaseorder_main",
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
       "outputDataModelName": "mdmpurchaseorder",
       "overlapDeltaMinutes": 30,
