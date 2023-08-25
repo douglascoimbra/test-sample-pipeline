@@ -49,6 +49,7 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": true,
+      "useBatchNotification": true,
       "cronExpressions": [
         "0 */1 0 ? * * *"
       ],
