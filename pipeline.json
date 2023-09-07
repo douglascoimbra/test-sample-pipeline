@@ -36,7 +36,7 @@
         "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "coimbra"
+            "stagingName": "product"
           }
         ]
       }
