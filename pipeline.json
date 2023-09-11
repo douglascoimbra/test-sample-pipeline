@@ -17,8 +17,6 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": true,
-      "maxNumWorkers": 4,
-      "workerType": "n1-standard-2",
       "cronExpressions": [
         "0 0/5 * ? * MON-FRI *",
         "0 0/15 * ? * SAT,SUN *"
