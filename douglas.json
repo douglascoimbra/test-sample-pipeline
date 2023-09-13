@@ -17,7 +17,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "sendToSubscriptions": true,
+      "sendToSubscriptions": false,
       "saveToRealtime": true,
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
