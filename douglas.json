@@ -17,7 +17,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "sendToSubscriptions": false,
+      "sendToSubscriptions": true,
       "saveToRealtime": true,
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
@@ -52,7 +52,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "sendToSubscriptions": true,
+      "sendToSubscriptions": false,
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
         "purchaseorder_prepare.sql"
