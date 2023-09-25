@@ -42,8 +42,8 @@
     },
     {
       "pipelineName": "purchaseorder_main",
-      "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
-      "outputDataModelName": "mdmpurchaseorder",
+      "pipelineDescription": "Pipeline for the product table again, for batch partial process scenario",
+      "outputDataModelName": "mdmfarhorizon",
       "overlapDeltaMinutes": 72,
       "saveToCds": true,
       "saveToUnified": true,
@@ -56,17 +56,17 @@
       "prepareScripts": [
         "purchaseorder_prepare.sql"
       ],
-      "processScript": "purchaseorder.sql",
+      "processScript": "product2.sql",
       "sourceEntities": {
         "dataModels": [
           {
-            "dataModelName": "mdmpurchaseorder"
+            "dataModelName": "mdmfarhorizon"
           }
         ],
         "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "purchaseorder"
+            "stagingName": "product"
           }
         ]
       }
