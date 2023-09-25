@@ -56,7 +56,7 @@
       "prepareScripts": [
         "purchaseorder_prepare.sql"
       ],
-      "processScript": "product2.sql",
+      "processScript": "product.sql",
       "sourceEntities": {
         "dataModels": [
           {
