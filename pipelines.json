@@ -41,7 +41,7 @@
       }
     },
     {
-      "pipelineName": "purchaseorder_main",
+      "pipelineName": "farhorizon_main",
       "pipelineDescription": "Pipeline for the product table again, for batch partial process scenario",
       "outputDataModelName": "mdmfarhorizon",
       "overlapDeltaMinutes": 72,
