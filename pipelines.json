@@ -56,7 +56,7 @@
       "prepareScripts": [
         "purchaseorder_prepare.sql"
       ],
-      "processScript": "product.sql",
+      "processScript": "farhorizon.sql",
       "sourceEntities": {
         "dataModels": [
           {
