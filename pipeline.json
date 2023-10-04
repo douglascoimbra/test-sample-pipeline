@@ -21,9 +21,6 @@
         "0 0/5 * ? * MON-FRI *",
         "0 0/15 * ? * SAT,SUN *"
       ],
-      "prepareScripts": [
-        "product_prepare.sql"
-      ],
       "processScript": "product.sql",
       "sourceEntities": {
         "dataModels": [
@@ -52,7 +49,7 @@
         "0 */1 0 ? * * *"
       ],
       "prepareScripts": [
-        "purchaseorder_prepare.sql"
+        ""
       ],
       "processScript": "purchaseorder.sql",
       "sourceEntities": {
