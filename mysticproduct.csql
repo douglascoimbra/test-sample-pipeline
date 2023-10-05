@@ -1,5 +1,3 @@
-with qa_stg_nlp_product
-as (
 SELECT 
   to_hex(
     md5(
@@ -21,17 +19,6 @@ SELECT
   --metadataNoId--
 FROM 
   stg_nlp_product AS stg 
-    --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
-),
-mdmproduct as (
-  select * from qa_stg_nlp_product where ranking = 1
-)
-
-select * except(ranking),
-(
-    (mdmname is null) or (mdmname = '')
-    or (mdmbarcode is null) or (mdmbarcode  = '')
-    or (mdmdescription is null) or (mdmdescription  = 'Functionize')
-) mdmDeleted
-from mdmproduct
-
+WHERE 
+  1 = 1 --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
+  --tenantIds-- and mdmTenantId IN {{tenantIds}}
