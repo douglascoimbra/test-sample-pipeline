@@ -48,9 +48,6 @@
       "cronExpressions": [
         "0 */1 0 ? * * *"
       ],
-      "prepareScripts": [
-        ""
-      ],
       "processScript": "purchaseorder.sql",
       "sourceEntities": {
         "dataModels": [
