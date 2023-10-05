@@ -19,7 +19,7 @@
       "saveToRealtime": true,
       "sendToSubscriptions": true,
       "saveToRealtime": true,
-      "timeZone": "America/Sao_Paulo"
+      "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
         "product_prepare.sql"
       ],
