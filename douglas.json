@@ -21,9 +21,6 @@
       "saveToRealtime": true,
       "timeZone": "America/Sao_Paulo",
       "processScript": "product.sql",
-      "prepareScripts": [
-      ""
-    ],
       "sourceEntities": {
         "dataModels": [
 
