@@ -21,6 +21,9 @@
       "saveToRealtime": true,
       "timeZone": "America/Sao_Paulo",
       "processScript": "product.sql",
+      "prepareScripts": [
+      "product_prepare.sql"
+    ],
       "sourceEntities": {
         "dataModels": [
 
@@ -52,7 +55,7 @@
       "sendToSubscriptions": false,
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
-      ""
+      "purchaseorder_prepare.sql"
       ],
       "processScript": "purchaseorder.sql",
       "sourceEntities": {
