@@ -23,7 +23,7 @@
       "prepareScripts": [
         "product_prepare.sql"
       ],
-      "processScript": "mystic.product.csql",
+      "processScript": "mysticproduct.csql",
       "sourceEntities": {
         "dataModels": [
 
