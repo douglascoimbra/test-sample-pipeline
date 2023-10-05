@@ -19,7 +19,7 @@ SELECT
         contains_substr(stg.productname, 'banan') as mdmdeleted
   --metadataNoId--
 FROM 
-  `carol-101041b886a2401f87ee.101041b886a2401f87ee89fe221e21cd.stg_nlp_product` AS stg 
+  stg_nlp_product AS stg 
 WHERE 
   1 = 1 --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
   --tenantIds-- and mdmTenantId IN {{tenantIds}}
