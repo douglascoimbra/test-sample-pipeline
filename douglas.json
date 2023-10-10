@@ -10,7 +10,7 @@
       "cronExpressions": [
         "0 * * ? * *"
       ],
-      "pipelineName": "qareplikas",
+      "pipelineName": "product_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
       "overlapDeltaMinutes": 120,
@@ -45,7 +45,7 @@
       "cronExpressions": [
         "0 * * ? * *"
       ],
-      "pipelineName": "qareplikas",
+      "pipelineName": "purchase_main",
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_purchaseorder",
       "outputDataModelName": "mdmpurchaseorder",
       "overlapDeltaMinutes": 30,
