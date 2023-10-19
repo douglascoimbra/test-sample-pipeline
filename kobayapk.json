@@ -18,7 +18,6 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": true,
-      "saveToRealtime": true,
       "timeZone": "America/Sao_Paulo",
       "prepareScripts": [
         "product_prepare.sql"
@@ -26,13 +25,10 @@
       "processScript": "mysticproduct.csql",
       "sourceEntities": {
         "dataModels": [
-
           {
-
-              "dataModelName": "mdmproduct"
-
-           }
-],
+            "dataModelName": "mdmproduct"
+          }
+        ],
         "stagings": [
           {
             "connectorName": "nlp",
@@ -42,7 +38,6 @@
             "connectorName": "nlp",
             "stagingName": "douglas"
           }
-          
         ]
       }
     },
@@ -65,19 +60,15 @@
       "processScript": "purchaseorder.sql",
       "sourceEntities": {
         "dataModels": [
-
           {
-
-              "dataModelName": "mdmpurchaseorder"
-
-           }
-],
+            "dataModelName": "mdmpurchaseorder"
+          }
+        ],
         "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "purchaseorder",
+            "stagingName": "purchaseorder"
           }
-          
         ]
       }
     }
