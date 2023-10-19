@@ -1,0 +1,25 @@
+SELECT 
+  to_hex(
+    md5(
+      concat(
+        stg.mdmTenantId,
+        'product{',
+            '"category":"', category, '"',
+            '"iddatepk":"', iddatepk, '",',
+            '"productname":"', productname, '",',
+            '"productprice":"', coalesce(productprice, 0), '"',
+        '}'
+      )
+    )
+  ) AS __mdmid, 
+        stg.iddatepk as mdmproductdate, 
+        stg.productname AS mdmname, 
+        stg.category AS mdmdescription, 
+        stg.productprice AS mdmunitvalue, 
+        contains_substr(stg.productname, 'functionize') AS mdmDeleted
+  --metadataNoId--
+FROM 
+  stg_nlp_product AS stg 
+WHERE 
+  1 = 1 --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
+  --tenantIds-- and mdmTenantId IN {{tenantIds}}
