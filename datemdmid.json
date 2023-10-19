@@ -1,0 +1,79 @@
+{
+  "defaults": {
+    "cronExpressions": [],
+    "prepareScripts": [
+      "prepare.sql"
+    ]
+  },
+  "pipelines": [
+    {
+      "cronExpressions": [
+        "0 */5 0 ? * * *"
+      ],
+      "pipelineName": "product_main",
+      "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
+      "outputDataModelName": "mdmproduct",
+      "overlapDeltaMinutes": 120,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "saveToRealtime": true,
+      "timeZone": "America/Sao_Paulo",
+      "prepareScripts": [
+        "product_prepare.sql"
+      ],
+      "processScript": "datepk.csql",
+      "sourceEntities": {
+        "dataModels": [
+
+          {
+
+              "dataModelName": "mdmproduct"
+
+           }
+],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
+          }
+        ]
+      }
+    },
+    {
+      "cronExpressions": [
+        "0 * * ? * *"
+      ],
+      "pipelineName": "purchase_main",
+      "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_purchaseorder",
+      "outputDataModelName": "mdmpurchaseorder",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": false,
+      "timeZone": "America/Sao_Paulo",
+      "prepareScripts": [
+        "purchaseorder_prepare.sql"
+      ],
+      "processScript": "purchaseorder.sql",
+      "sourceEntities": {
+        "dataModels": [
+
+          {
+
+              "dataModelName": "mdmpurchaseorder"
+
+           }
+],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
+          }
+        ]
+      }
+    }
+  ]
+}
