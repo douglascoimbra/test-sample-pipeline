@@ -21,7 +21,7 @@
         "0 0/5 * ? * MON-FRI *",
         "0 0/15 * ? * SAT,SUN *"
       ],
-      "processScript": "product.sql",
+      "processScript": "myproduct.csql",
       "sourceEntities": {
         "dataModels": [
           {
