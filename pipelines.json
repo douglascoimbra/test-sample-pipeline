@@ -25,7 +25,7 @@
       "prepareScripts": [
         "product_prepare.sql"
       ],
-      "processScript": "product.sql",
+      "processScript": "audproduct.csql",
       "sourceEntities": {
         "dataModels": [
           {
