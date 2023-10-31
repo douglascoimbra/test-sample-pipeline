@@ -10,7 +10,7 @@
       "useBatchNotification": true,
       "saveToUnified": true,
       "cronExpressions": [
-        "0 */1 0 ? * * *"
+        "0 0 0 1 1 ? 2099"
       ],
       "overlapDeltaMinutes": 30,
       "sourceEntities": {
