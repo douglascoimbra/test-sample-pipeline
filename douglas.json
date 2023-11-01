@@ -8,7 +8,7 @@
   "pipelines": [
     {
       "cronExpressions": [
-        "0 */3 0 ? * * *"
+        "0 */2 0 ? * * *"
       ],
       "pipelineName": "product_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
