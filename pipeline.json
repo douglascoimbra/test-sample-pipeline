@@ -46,7 +46,7 @@
       "saveToRealtime": true,
       "sendToSubscriptions": true,
       "cronExpressions": [
-        "0 */1 0 ? * * *"
+        "0 * * ? * *"
       ],
       "processScript": "purchaseorder.sql",
       "sourceEntities": {
