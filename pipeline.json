@@ -34,64 +34,62 @@
             "stagingName": "product"
           }
         ]
-      },
-      "pipelines": [
-        {
-          "pipelineName": "kabalproduct_main",
-          "pipelineDescription": " Kabalistic Pipeline for the product table, that uses staging nlp_product",
-          "outputDataModelName": "mdmproduct",
-          "overlapDeltaMinutes": 30,
-          "saveToCds": true,
-          "saveToUnified": true,
-          "saveToRealtime": true,
-          "sendToSubscriptions": true,
-          "cronExpressions": [
-            "0 0/3 * ? * MON-FRI *",
-            "0 0/4 * ? * SAT,SUN *"
-          ],
-          "processScript": "myproduct.csql",
-          "sourceEntities": {
-            "dataModels": [
-              {
-                "dataModelName": "mdmproduct"
-              }
-            ],
-            "stagings": [
-              {
-                "connectorName": "nlp",
-                "stagingName": "product"
-              }
-            ]
+      }
+    },
+    {
+      "pipelineName": "purchaseorder_main",
+      "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
+      "outputDataModelName": "mdmpurchaseorder",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "cronExpressions": [
+        "0 * * ? * *"
+      ],
+      "processScript": "purchaseorder.sql",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmpurchaseorder"
           }
-        },
-        {
-          "pipelineName": "purchaseorder_main",
-          "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
-          "outputDataModelName": "mdmpurchaseorder",
-          "overlapDeltaMinutes": 30,
-          "saveToCds": true,
-          "saveToUnified": true,
-          "saveToRealtime": true,
-          "sendToSubscriptions": true,
-          "cronExpressions": [
-            "0 * * ? * *"
-          ],
-          "processScript": "purchaseorder.sql",
-          "sourceEntities": {
-            "dataModels": [
-              {
-                "dataModelName": "mdmpurchaseorder"
-              }
-            ],
-            "stagings": [
-              {
-                "connectorName": "nlp",
-                "stagingName": "purchaseorder"
-              }
-            ]
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
           }
-        }
-      ]
+        ]
+      }
+    },
+    {
+      "pipelineName": "newqakabproduct_main",
+      "pipelineDescription": "KabalPipe for the product table, that uses staging nlp_product",
+      "outputDataModelName": "mdmproduct",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "cronExpressions": [
+        "0 0/3 * ? * MON-FRI *",
+        "0 0/2 * ? * SAT,SUN *"
+      ],
+      "processScript": "myproduct.csql",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmproduct"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
+          }
+        ]
+      }
     }
   ]
 }
