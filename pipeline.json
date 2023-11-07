@@ -64,9 +64,9 @@
       }
     },
     {
-      "pipelineName": "newqakabproduct_main",
-      "pipelineDescription": "KabalPipe for the product table, that uses staging nlp_product",
-      "outputDataModelName": "mdmproduct",
+      "pipelineName": "newfarhorizon_main",
+      "pipelineDescription": "Far Horizon Data Model, that uses staging nlp_product",
+      "outputDataModelName": "mdmfarhorizon",
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
       "saveToUnified": true,
@@ -76,7 +76,7 @@
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
       ],
-      "processScript": "myproduct.csql",
+      "processScript": "farhorizon.sql",
       "sourceEntities": {
         "dataModels": [
           {
