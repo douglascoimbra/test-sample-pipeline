@@ -76,17 +76,21 @@
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
       ],
-      "processScript": "farhorizon.sql",
+      "processScript": "purchprodnewsql.csql",
       "sourceEntities": {
         "dataModels": [
           {
-            "dataModelName": "mdmproduct"
+            "dataModelName": "mdmfarhorizon"
           }
         ],
         "stagings": [
           {
             "connectorName": "nlp",
             "stagingName": "product"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
           }
         ]
       }
