@@ -28,7 +28,7 @@ as (
     --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
 ),
 
-mdmproduct as (
+mdmfarhorizon as (
     select * from qa_stg_nlp_product where ranking = 1
     union all
     select * from qa_stg_nlp_purchaseorder where ranking = 1
@@ -38,4 +38,4 @@ select * except(ranking),
     (mdmname is null) or (mdmname = '')
     or (mdmunitvalue is null)
 ) mdmDeleted
-from mdmproduct
+from mdmfarhorizon
