@@ -46,12 +46,13 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "checkExistsDataToProcess": false,
+      "checkExistsDataToProcess": true,
+      "useBatchNotification": true,
       "sendToSubscriptions": true,
       "cronExpressions": [
         "0 * * ? * *"
       ],
-      "processScript": "purchaseorder.sql",
+      "processScript": "audpurchase.csql",
       "sourceEntities": {
         "dataModels": [
           {
@@ -75,8 +76,8 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": true,
-      "checkExistsDataToProcess": true,
-      "useBatchNotification": true,
+      "checkExistsDataToProcess": false,
+      "useBatchNotification": false,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
