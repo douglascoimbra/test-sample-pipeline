@@ -12,7 +12,7 @@
       "pipelineName": "newunifproduct_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
-      "checkExistingDataToProcess": true,
+      "checkExistsDataToProcess": true,
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
       "saveToUnified": true,
@@ -46,6 +46,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
+      "checkExistsDataToProcess": false,
       "sendToSubscriptions": true,
       "cronExpressions": [
         "0 * * ? * *"
@@ -74,6 +75,7 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": true,
+      "checkExistsDataToProcess": true,
       "useBatchNotification": true,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
