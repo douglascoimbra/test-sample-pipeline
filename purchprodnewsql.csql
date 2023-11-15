@@ -11,6 +11,7 @@ as (
     --metadataNoId-v2--
     from  stg_nlp_product as stg
     --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
+    --tenantIds-- and mdmTenantId IN {{tenantIds}}
 ),
 
 qa_stg_nlp_purchaseorder
@@ -25,6 +26,7 @@ as (
     --metadata-v2--
     from  stg_nlp_purchaseorder as stg
     --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
+    --tenantIds-- and mdmTenantId IN {{tenantIds}}
 ),
 
 mdmfarhorizon as (
