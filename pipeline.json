@@ -17,8 +17,8 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "sendToSubscriptions": true,
-      "useBatchNotification": false,
+      "sendToSubscriptions": false,
+      "useBatchNotification": true,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
