@@ -23,7 +23,7 @@
       "prepareScripts": [
         "product_prepare.sql"
       ],
-      "processScript": "farhorizon.csql",
+      "processScript": "product.sql",
       "sourceEntities": {
         "dataModels": [
 
@@ -46,7 +46,7 @@
         "0 * * ? * *"
       ],
       "pipelineName": "farhorizon_main",
-      "pipelineDescription": "Pipeline for the product table",
+      "pipelineDescription": "Pipeline for the product table with data model far horizon",
       "outputDataModelName": "mdmfarhorizon",
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
@@ -57,7 +57,7 @@
       "prepareScripts": [
         ""
       ],
-      "processScript": "purchaseorder.csql",
+      "processScript": "farhorizonqa.csql",
       "sourceEntities": {
         "dataModels": [
 
