@@ -23,7 +23,7 @@
       "prepareScripts": [
         "product_prepare.sql"
       ],
-      "processScript": "mysticproduct.csql",
+      "processScript": "farhorizon.csql",
       "sourceEntities": {
         "dataModels": [
 
