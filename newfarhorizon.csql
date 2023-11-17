@@ -1,5 +1,5 @@
 SELECT 
-    stg.productname as newfield,
+    stg.id as mdmbarcode,
     stg.productname as mdmname,
     CONCAT("qawork-", stg.productname) as mdmdescription,
     stg.productprice as mdmunitvalue,
