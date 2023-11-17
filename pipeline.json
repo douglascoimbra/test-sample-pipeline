@@ -62,7 +62,7 @@
         "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "douglas"
+            "stagingName": "purchaseorder"
           }
         ]
       }
