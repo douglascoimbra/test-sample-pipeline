@@ -18,7 +18,7 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": false,
-      "useBatchNotification": false,
+      "useBatchNotification": true,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
@@ -76,13 +76,13 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": true,
-      "checkExistsDataToProcess": false,
+      "checkExistsDataToProcess": true,
       "useBatchNotification": false,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
       ],
-      "processScript": "newfarhorizon.csql",
+      "processScript": "purchprodnewsql.csql",
       "sourceEntities": {
         "dataModels": [
           {
