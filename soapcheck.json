@@ -18,12 +18,12 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "sendToSubscriptions": false,
-      "useBatchNotification": true,
+      "useBatchNotification": false,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
       ],
-      "processScript": "audproduct.csql",
+      "processScript": "kameoproduct.csql",
       "sourceEntities": {
         "dataModels": [
           {
