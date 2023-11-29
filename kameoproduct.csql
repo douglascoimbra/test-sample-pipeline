@@ -1,0 +1,21 @@
+WITH product AS (
+    SELECT
+        id AS mdmname,
+        productname AS mdmDescription,
+        productprice AS mdmUnitvalue,
+        image AS mdmImage,
+        category AS mdmCategoryname,
+        birthdate AS mdmProductNew,
+        birthdate AS timerSoap,
+        birthdate AS mdmRegisterdate,
+        --metadata--
+    FROM
+        stg_nlp_product as stg
+    WHERE
+        1 = 1
+        --timestamp-- OR mdmCounterForEntity > {{start_from}}
+)
+SELECT
+    *
+FROM
+    product
