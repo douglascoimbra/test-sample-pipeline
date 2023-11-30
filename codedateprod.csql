@@ -1,0 +1,11 @@
+SELECT
+    DATE('2023-11-25') as mdmreleaseDate,
+    stg.productname as newfield,
+    stg.productname as mdmname,
+    CONCAT("qawork-", stg.productname) as mdmdescription,
+    stg.productprice as mdmunitvalue,
+    CONTAINS_SUBSTR(stg.productname, 'flo') AS mdmDeleted,
+    to_hex(md5(lower(CONCAT(stg.mdmTenantId,'mdmproduct{"mdmname":"', stg.productname, '"}')))) __mdmId
+    --stg._ingestionDatetime as _ingestionDatetime
+ , stg.mdmTenantId as __mdmTenantId, stg.mdmCounterForEntity as __mdmCounterForEntity, ARRAY[stg.mdmId] as __mdmStagingRecordIds, CASE WHEN stg.mdmEntityType is NULL THEN ARRAY[] ELSE ARRAY[SPLIT(stg.mdmEntityType, "#")[SAFE_OFFSET(0)]] END as __mdmSourceEntityNames, "461d6191089b480f8b63e4b19fa0fab5" as __mdmTaskId, "461d6191089b480f8b63e4b19fa0fab5" as __mdmSourceOperationTaskId
+from stg_nlp_product as stg
