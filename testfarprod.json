@@ -23,7 +23,7 @@
       "prepareScripts": [
         "product_prepare.sql"
       ],
-      "processScript": "product.sql",
+      "processScript": "codedateprod.csql",
       "sourceEntities": {
         "dataModels": [
 
