@@ -5,7 +5,7 @@ WITH product AS (
         productprice AS mdmUnitvalue,
         image AS mdmImage,
         category AS mdmCategoryname,
-        birthdate AS mdmProductNew,
+        birthdate AS ProductNew,
         birthdate AS timerSoap,
         birthdate AS mdmRegisterdate,
         --metadata--
