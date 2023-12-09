@@ -23,7 +23,7 @@
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
       ],
-      "processScript": "kameoproduct.csql",
+      "processScript": "audproduct.csql",
       "sourceEntities": {
         "dataModels": [
           {
