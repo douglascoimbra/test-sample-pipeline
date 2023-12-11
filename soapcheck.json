@@ -52,7 +52,7 @@
       "cronExpressions": [
         "0 * * ? * *"
       ],
-      "processScript": "audpurchase.csql",
+      "processScript": "noidpurchase.csql",
       "sourceEntities": {
         "dataModels": [
           {
