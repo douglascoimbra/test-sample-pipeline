@@ -69,7 +69,7 @@
     },
     {
       "pipelineName": "newfarhorizon_main",
-      "pipelineDescription": "Far Horizon Data Model, that uses staging nlp_product",
+      "pipelineDescription": "Far Horizon Data Model, that uses staging nlp_product & nlp purchaseorder",
       "outputDataModelName": "mdmfarhorizon",
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
@@ -82,7 +82,7 @@
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
       ],
-      "processScript": "prodnoid.csql",
+      "processScript": "farhorizonv2.csql",
       "sourceEntities": {
         "dataModels": [
           {
