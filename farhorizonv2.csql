@@ -8,7 +8,7 @@ as (
         stg.category as mdmdescription,
         CAST(stg.productprice as FLOAT64) as mdmunitvalue,
         ROW_NUMBER() OVER(PARTITION BY stg.id ORDER BY mdmCounterForEntity DESC) AS ranking
-    --metadata{nlp,product}--
+    --metadata-v2--
     from  stg_nlp_product as stg
     --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
 ),
@@ -21,7 +21,7 @@ as (
         stg.category as mdmdescription,
         CAST(stg.orderid as  FLOAT64) as mdmunitvalue,
         ROW_NUMBER() OVER(PARTITION BY stg.orderid ORDER BY mdmCounterForEntity DESC) AS ranking
-    --metadata{nlp,purchaseorder}--
+    --metadata-v2--
     from  stg_nlp_purchaseorder as stg
     --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
 ),
