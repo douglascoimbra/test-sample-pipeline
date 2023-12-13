@@ -10,7 +10,8 @@ as (
         ROW_NUMBER() OVER(PARTITION BY stg.id ORDER BY mdmCounterForEntity DESC) AS ranking
     --metadata-V2--
     from  stg_nlp_product as stg
-    --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
+    --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
+    --tenantIds-- and mdmTenantId IN {{tenantIds}}
 ),
 
 qa_stg_nlp_purchaseorder
@@ -23,7 +24,8 @@ as (
         ROW_NUMBER() OVER(PARTITION BY stg.orderid ORDER BY mdmCounterForEntity DESC) AS ranking
     --metadata-V2--
     from  stg_nlp_purchaseorder as stg
-    --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
+    --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
+    --tenantIds-- and mdmTenantId IN {{tenantIds}}
 ),
 
 mdmfarhorizon as (
