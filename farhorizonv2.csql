@@ -8,7 +8,7 @@ as (
         stg.category as mdmdescription,
         CAST(stg.productprice as FLOAT64) as mdmunitvalue,
         ROW_NUMBER() OVER(PARTITION BY stg.id ORDER BY mdmCounterForEntity DESC) AS ranking
-    --metadata-V2--
+    --metadata-v2--
     from  stg_nlp_product as stg
     --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
     --tenantIds-- and mdmTenantId IN {{tenantIds}}
@@ -22,7 +22,7 @@ as (
         stg.category as mdmdescription,
         CAST(stg.orderid as  FLOAT64) as mdmunitvalue,
         ROW_NUMBER() OVER(PARTITION BY stg.orderid ORDER BY mdmCounterForEntity DESC) AS ranking
-    --metadata-V2--
+    --metadata-v2--
     from  stg_nlp_purchaseorder as stg
     --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
     --tenantIds-- and mdmTenantId IN {{tenantIds}}
