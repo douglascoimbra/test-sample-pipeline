@@ -9,7 +9,7 @@ as (
         stg.category as mdmdescription,
         CAST(stg.productprice as FLOAT64) as mdmunitvalue,
         ROW_NUMBER() OVER(PARTITION BY stg.id ORDER BY mdmCounterForEntity DESC) AS ranking
-    --metadata-v2--
+    --metadataNoId-v2--
     from  stg_nlp_product as stg
     --timestamp-- WHERE mdmCounterForEntity__DATETIME__ > SAFE.DATETIME(TIMESTAMP_MICROS(SAFE_CAST({{start_from}} AS INT64)))
     --tenantIds-- and mdmTenantId IN {{tenantIds}}
