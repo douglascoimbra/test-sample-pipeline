@@ -47,7 +47,7 @@
       "saveToUnified": true,
       "saveToRealtime": true,
       "checkExistsDataToProcess": true,
-      "useBatchNotification": false,
+      "useBatchNotification": true,
       "sendToSubscriptions": true,
       "cronExpressions": [
         "0 * * ? * *"
