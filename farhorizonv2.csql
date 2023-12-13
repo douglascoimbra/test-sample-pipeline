@@ -3,6 +3,7 @@
 with qa_stg_nlp_product
 as (
     SELECT 
+        stg.id as __mdmId
         stg.id as mdmbarcode,
         stg.productname as mdmname,
         stg.category as mdmdescription,
@@ -17,7 +18,7 @@ as (
 qa_stg_nlp_purchaseorder
 as (
     SELECT 
-        TO_HEX(MD5(CONCAT(concat(stg.orderid,'|',stg.purchasedate)))) as __mdmId,
+        stg.category as __mdmId
         stg.country as mdmbarcode,
         stg.customername as mdmname,
         stg.category as mdmdescription,
