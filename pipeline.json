@@ -17,7 +17,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "shouldFanOut":true
+      "shouldFanOut":false,
       "sendToSubscriptions": false,
       "useBatchNotification": true,
       "cronExpressions": [
