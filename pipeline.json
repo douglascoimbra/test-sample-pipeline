@@ -78,7 +78,7 @@
       "saveToRealtime": true,
       "sendToSubscriptions": true,
       "checkExistsDataToProcess": true,
-      "useBatchNotification": false,
+      "useBatchNotification": true,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
