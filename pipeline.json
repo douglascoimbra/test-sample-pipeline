@@ -83,7 +83,7 @@
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
       ],
-      "processScript": "purchprodnewsql.csql",
+      "processScript": "farhorizonv2.csql",
       "sourceEntities": {
         "dataModels": [
           {
