@@ -20,6 +20,7 @@
       "shouldFanOut":false,
       "sendToSubscriptions": false,
       "useBatchNotification": true,
+      "tempTableRetentionPeriodDays": 7,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
@@ -49,6 +50,7 @@
       "saveToRealtime": true,
       "checkExistsDataToProcess": true,
       "useBatchNotification": true,
+      "tempTableRetentionPeriodDays": 10,
       "sendToSubscriptions": true,
       "cronExpressions": [
         "0 * * ? * *"
