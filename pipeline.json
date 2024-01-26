@@ -81,7 +81,7 @@
       "sendToSubscriptions": true,
       "checkExistsDataToProcess": true,
       "useBatchNotification": false,
-      "tempTableRetentionPeriodDays": 09,
+      "tempTableRetentionPeriodDays": 9,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
