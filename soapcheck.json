@@ -46,7 +46,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "checkExistsDataToProcess": true,
+      "checkExistsDataToProcess": false,
       "useBatchNotification": false,
       "sendToSubscriptions": true,
       "cronExpressions": [
