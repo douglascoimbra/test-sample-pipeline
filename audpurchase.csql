@@ -4,6 +4,7 @@ TO_HEX(MD5(CONCAT(concat(stg.orderid,'|',stg.purchasedate)))) as __mdmId,
     stg.mdmId AS stgRecordId,
     stg.customername as mdmcustomername,
     stg.country as mdmcountry,
+    stg.country as newfieldpurchase,
     stg.purchasedate as cronus,
     CONCAT("qawork-", stg.category) as mdmcategoryname,
     CONTAINS_SUBSTR(stg.country, 'Argentina') AS mdmDeleted
