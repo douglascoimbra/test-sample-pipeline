@@ -2,7 +2,6 @@ SELECT
     stg.id as mdmbarcode,
     stg.productname as mdmname,
     stg.productname as field1new,
-    stg.gpsfield as gpsfinal,
     stg.category as mdmdescription,
     stg.productprice as mdmunitvalue,
     CONTAINS_SUBSTR(stg.productname, 'banan') AS mdmDeleted
