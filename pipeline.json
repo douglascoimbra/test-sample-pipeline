@@ -17,7 +17,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "shouldFanOut":false,
+      "shouldFanOut": false,
       "sendToSubscriptions": false,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 1,
@@ -101,6 +101,38 @@
           {
             "connectorName": "nlp",
             "stagingName": "purchaseorder"
+          }
+        ]
+      }
+    },
+    {
+      "pipelineName": "purchase_products",
+      "pipelineDescription": "Pipeline to list purchase order table, that uses staging nlp_product with jOIN",
+      "outputDataModelName": "mdmpurchaseproducts",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "useBatchNotification": true,
+      "cronExpressions": [
+        "0 0/3 * ? * * *"
+      ],
+      "processScript": "purchaseproducts.sql",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmpurchaseproducts"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
           }
         ]
       }
