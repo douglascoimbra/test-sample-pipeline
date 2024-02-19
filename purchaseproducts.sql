@@ -7,8 +7,8 @@ SELECT
 --metadata-v2--
 FROM 
   stg_nlp_purchaseorder stg 
-  JOIN UNNEST(stg.products) as product 
-  JOIN stg_nlp_product stg_p on (
+  LEFT JOIN UNNEST(stg.products) as product 
+  LEFT JOIN stg_nlp_product stg_p on (
     product.bar_code = stg_p.bar_code
   ) --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
   --tenantIds-- and mdmTenantId IN {{tenantIds}}
