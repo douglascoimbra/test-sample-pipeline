@@ -29,7 +29,7 @@
       "sourceEntities": {
         "dataModels": [
           {
-            "dataModelName": "marcobay"
+            "dataModelName": "mdmproduct"
           }
         ],
         "stagings": [
