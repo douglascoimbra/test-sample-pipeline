@@ -11,7 +11,7 @@
     {
       "pipelineName": "newunifproduct_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
-      "outputDataModelName": "shurato",
+      "outputDataModelName": "mdmproduct",
       "checkExistsDataToProcess": true,
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
