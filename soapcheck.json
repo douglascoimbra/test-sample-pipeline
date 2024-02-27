@@ -33,7 +33,7 @@
         "stagings": [
           {
             "connectorName": "nlp",
-            "stagingName": "douglas"
+            "stagingName": "product"
           }
         ]
       }
