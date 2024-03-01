@@ -1,5 +1,5 @@
 SELECT 
-    stg.id as mdmbarcode,
+    stg.idox as mdmbarcode,
     stg.productname as mdmname,
     stg.productname as field1new,
     stg.category as mdmdescription,
