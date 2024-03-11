@@ -113,7 +113,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "sendToSubscriptions": true,
+      "sendToSubscriptions": false,
       "useBatchNotification": true,
       "cronExpressions": [
         "0 0/3 * ? * * *"
