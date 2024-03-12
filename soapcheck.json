@@ -21,7 +21,7 @@
       "useBatchNotification": false,
       "cronExpressions": [
         "0 0/1 * ? * MON-FRI *",
-        "0 0/2 * ? * SAT,SUN *"
+        "0 0/3 * ? * SAT,SUN *"
       ],
       "processScript": "audproduct.csql",
       "sourceEntities": {
