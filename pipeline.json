@@ -51,7 +51,7 @@
       "checkExistsDataToProcess": true,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 10,
-      "sendToSubscriptions": true,
+      "sendToSubscriptions": false,
       "cronExpressions": [
         "0 * * ? * *"
       ],
