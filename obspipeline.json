@@ -22,8 +22,7 @@
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 1,
       "cronExpressions": [
-        "0 0/3 * ? * MON-FRI *",
-        "0 0/2 * ? * SAT,SUN *"
+        "0 0 0 1 1 ? 2099"
       ],
       "processScript": "audproduct.csql",
       "sourceEntities": {
@@ -53,7 +52,7 @@
       "tempTableRetentionPeriodDays": 10,
       "sendToSubscriptions": false,
       "cronExpressions": [
-        "0 * * ? * *"
+        "0 0 0 1 1 ? 2099"
       ],
       "processScript": "audpurchase.csql",
       "sourceEntities": {
@@ -83,8 +82,7 @@
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 9,
       "cronExpressions": [
-        "0 0/3 * ? * MON-FRI *",
-        "0 0/2 * ? * SAT,SUN *"
+        "0 0 0 1 1 ? 2099"
       ],
       "processScript": "farhorizonv2.csql",
       "sourceEntities": {
@@ -116,7 +114,7 @@
       "sendToSubscriptions": false,
       "useBatchNotification": true,
       "cronExpressions": [
-        "0 0/3 * ? * * *"
+        "0 0 0 1 1 ? 2099"
       ],
       "processScript": "purchaseproducts.sql",
       "sourceEntities": {
