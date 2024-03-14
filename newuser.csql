@@ -8,7 +8,7 @@ stg.phonenumber AS mdmphonenumber,
 stg.alwaysFalse AS mdmshouldsendwelcomeemail,
 stg.alwaysFalse AS mdmshouldcreateuser,
 stg.alwaysTrue AS mdmisactive,
-stg.alwaysTrue AS mdmallowcaroluiaccess,
+stg.alwaysFalse AS mdmallowcaroluiaccess,
 CONTAINS_SUBSTR(stg.gender, 'F') AS mdmDeleted
     --metadata--
   FROM (
