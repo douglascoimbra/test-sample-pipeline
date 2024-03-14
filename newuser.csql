@@ -6,7 +6,7 @@ stg.login AS mdmlogin,
 stg.roles AS mdmroles,
 stg.phonenumber AS mdmphonenumber,
 stg.alwaysFalse AS mdmshouldsendwelcomeemail,
-stg.alwaysTrue AS mdmshouldcreateuser,
+stg.alwaysFalse AS mdmshouldcreateuser,
 stg.alwaysTrue AS mdmisactive,
 stg.alwaysTrue AS mdmallowcaroluiaccess,
 CONTAINS_SUBSTR(stg.gender, 'F') AS mdmDeleted
