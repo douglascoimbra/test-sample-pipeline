@@ -97,6 +97,10 @@
           {
             "connectorName": "nlp",
             "stagingName": "purchaseorder"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "douglas"
           }
         ]
       }
