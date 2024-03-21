@@ -102,38 +102,6 @@
           }
         ]
       }
-    },
-    {
-      "pipelineName": "purchase_products",
-      "pipelineDescription": "Pipeline to list purchase order table, that uses staging nlp_product with jOIN",
-      "outputDataModelName": "mdmpurchaseproducts",
-      "overlapDeltaMinutes": 30,
-      "saveToCds": true,
-      "saveToUnified": true,
-      "saveToRealtime": true,
-      "sendToSubscriptions": false,
-      "useBatchNotification": true,
-      "cronExpressions": [
-        "0 0 0 1 1 ? 2099"
-      ],
-      "processScript": "purchaseproducts.sql",
-      "sourceEntities": {
-        "dataModels": [
-          {
-            "dataModelName": "mdmpurchaseproducts"
-          }
-        ],
-        "stagings": [
-          {
-            "connectorName": "nlp",
-            "stagingName": "purchaseorder"
-          },
-          {
-            "connectorName": "nlp",
-            "stagingName": "product"
-          }
-        ]
-      }
     }
   ]
 }
