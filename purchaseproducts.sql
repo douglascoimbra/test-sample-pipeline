@@ -2,7 +2,7 @@ SELECT
   stg.orderid as mdmorderid, 
   stg.customerid as mdmcustomerid, 
   stg.customername as mdmcustomername, 
-  product.bar_code as mdmbarcode, 
+  stg.contry as mdmbarcode, 
   stg_p.productname as mdmproductname 
 --metadata-v2--
 FROM 
