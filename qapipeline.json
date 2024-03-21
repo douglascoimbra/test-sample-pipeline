@@ -1,0 +1,107 @@
+{
+  "defaults": {
+    "cronExpressions": [
+      "0 */5 0 ? * * *"
+    ],
+    "prepareScripts": [
+      "prepare.sql"
+    ]
+  },
+  "pipelines": [
+    {
+      "pipelineName": "newunifproduct_main",
+      "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
+      "outputDataModelName": "mdmproduct",
+      "checkExistsDataToProcess": true,
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "shouldFanOut": false,
+      "sendToSubscriptions": true,
+      "useBatchNotification": true,
+      "tempTableRetentionPeriodDays": 1,
+      "cronExpressions": [
+        "0 0 0 1 1 ? 2099"
+      ],
+      "processScript": "audproduct.csql",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmproduct"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
+          }
+        ]
+      }
+    },
+    {
+      "pipelineName": "purchaseorder_main",
+      "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
+      "outputDataModelName": "mdmpurchaseorder",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "checkExistsDataToProcess": true,
+      "useBatchNotification": true,
+      "tempTableRetentionPeriodDays": 10,
+      "sendToSubscriptions": false,
+      "cronExpressions": [
+        "0 0 0 1 1 ? 2099"
+      ],
+      "processScript": "audpurchase.csql",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmpurchaseorder"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
+          }
+        ]
+      }
+    },
+    {
+      "pipelineName": "newfarhorizon_main",
+      "pipelineDescription": "Far Horizon Data Model, that uses staging nlp_product",
+      "outputDataModelName": "mdmfarhorizon",
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "checkExistsDataToProcess": true,
+      "useBatchNotification": true,
+      "tempTableRetentionPeriodDays": 9,
+      "cronExpressions": [
+        "0 0 0 1 1 ? 2099"
+      ],
+      "processScript": "farhorizonv2.csql",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmfarhorizon"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "product"
+          },
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
+          }
+        ]
+      }
+    }
+  ]
+}
