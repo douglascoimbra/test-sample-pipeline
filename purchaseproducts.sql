@@ -9,6 +9,6 @@ FROM
   stg_nlp_purchaseorder stg 
   LEFT JOIN UNNEST(stg.products) as product 
   LEFT JOIN stg_nlp_product stg_p on (
-    product.bar_code = stg_p.bar_code
+    product.country = stg_p.country
   ) --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
   --tenantIds-- and mdmTenantId IN {{tenantIds}}
