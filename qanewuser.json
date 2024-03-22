@@ -1,0 +1,57 @@
+{
+  "pipelines": [
+    {
+      "pipelineName": "new_user_main",
+      "processScript": "newuser.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "saveToRealtime": true,
+      "outputDataModelName": "mdmuser",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 0 0 1 1 ? 2099"
+      ],
+      "overlapDeltaMinutes": 0,
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmuser"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "usertable"
+          }
+        ]
+      }
+    },
+    {
+      "pipelineName": "qa_user_main",
+      "processScript": "newuser.csql",
+      "sendToSubscriptions": true,
+      "saveToCds": true,
+      "saveToRealtime": true,
+      "outputDataModelName": "qauser",
+      "saveToUnified": true,
+      "cronExpressions": [
+        "0 0 0 1 1 ? 2099"
+      ],
+      "overlapDeltaMinutes": 0,
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "qauser"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "usertable"
+          }
+        ]
+      }
+    }
+  ]
+}
+}
