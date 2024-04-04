@@ -70,7 +70,7 @@
     {
       "pipelineName": "newfarhorizon_main",
       "pipelineDescription": "Far Horizon Data Model, that uses staging nlp_product & nlp purchaseorder",
-      "outputDataModelName": "mdmfarhorizon",
+      "outputDataModelName": "mdmlazarus",
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
       "saveToUnified": true,
@@ -86,7 +86,7 @@
       "sourceEntities": {
         "dataModels": [
           {
-            "dataModelName": "mdmfarhorizon"
+            "dataModelName": "mdmlazarus"
           }
         ],
         "stagings": [
