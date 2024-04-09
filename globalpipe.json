@@ -8,8 +8,12 @@
     ]
   },
   "pipelines": [
-  
     {
+     "additionalParameters": {
+       "connectorGroup": ["totvsprotheus"],
+       "myCustomKey": ["mycustomValue"],
+       "mySecondCustomkey": ["1", "2"]
+      },
       "pipelineName": "newunifproduct_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
@@ -52,7 +56,7 @@
       "checkExistsDataToProcess": true,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 10,
-      "sendToSubscriptions": false,
+      "sendToSubscriptions": true,
       "cronExpressions": [
         "0 * * ? * *"
       ],
