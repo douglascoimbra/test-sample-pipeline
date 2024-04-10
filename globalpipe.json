@@ -11,8 +11,8 @@
     {
      "additionalParameters": {
        "connectorGroup": ["totvsprotheus"],
-       "myCustomKey": ["mycustomValue"],
-       "mySecondCustomkey": ["1", "2"]
+       "myCustomKey": ["armadylloQA"],
+       "mySecondCustomkey": ["1", "2", "10", "20"]
       },
       "pipelineName": "newunifproduct_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
