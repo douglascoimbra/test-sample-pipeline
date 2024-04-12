@@ -9,9 +9,9 @@
   },
   "pipelines": [
     {
-      "pipelineName": "newunifproduct_main",
+      "pipelineName": "itemsale_main",
       "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
-      "outputDataModelName": "mdmproduct",
+      "outputDataModelName": "mdmitemsale",
       "checkExistsDataToProcess": true,
       "overlapDeltaMinutes": 30,
       "saveToCds": true,
@@ -23,17 +23,17 @@
         "0 0/1 * ? * MON-FRI *",
         "0 0/3 * ? * SAT,SUN *"
       ],
-      "processScript": "audproduct.csql",
+      "processScript": "item.csql",
       "sourceEntities": {
         "dataModels": [
           {
-            "dataModelName": "mdmproduct"
+            "dataModelName": "mdmitemsale"
           }
         ],
         "stagings": [
           {
-            "connectorName": "nlp",
-            "stagingName": "product"
+            "connectorName": "datasul",
+            "stagingName": "item"
           }
         ]
       }
