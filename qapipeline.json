@@ -17,7 +17,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "shouldFanOut": false,
+      "shouldFanOut": true,
       "sendToSubscriptions": true,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 1,
