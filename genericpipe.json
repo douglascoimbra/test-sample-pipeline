@@ -17,9 +17,9 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      "shouldFanOut": false,
+      "shouldFanOut": true,
       "sendToSubscriptions": true,
-      "useBatchNotification": true,
+      "useBatchNotification": false,
       "tempTableRetentionPeriodDays": 1,
       "cronExpressions": [
         "0 0 0 1 1 ? 2099"
@@ -47,6 +47,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
+      "shouldFanOut": true,
       "checkExistsDataToProcess": true,
       "useBatchNotification": false,
       "tempTableRetentionPeriodDays": 10,
@@ -79,7 +80,7 @@
       "saveToRealtime": true,
       "sendToSubscriptions": true,
       "checkExistsDataToProcess": true,
-      "useBatchNotification": false,
+      "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 9,
       "cronExpressions": [
         "0 0 0 1 1 ? 2099"
