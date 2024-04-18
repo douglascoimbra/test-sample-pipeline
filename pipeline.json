@@ -80,7 +80,7 @@
       "saveToRealtime": true,
       "sendToSubscriptions": true,
       "checkExistsDataToProcess": true,
-      "useBatchNotification": false,
+      "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 9,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
