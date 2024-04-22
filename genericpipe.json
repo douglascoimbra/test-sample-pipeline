@@ -19,7 +19,7 @@
       "saveToRealtime": true,
       "shouldFanOut": true,
       "sendToSubscriptions": true,
-      "useBatchNotification": false,
+      "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 1,
       "cronExpressions": [
         "0 0 0 1 1 ? 2099"
@@ -49,7 +49,7 @@
       "saveToRealtime": true,
       "shouldFanOut": true,
       "checkExistsDataToProcess": true,
-      "useBatchNotification": false,
+      "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 10,
       "sendToSubscriptions": false,
       "cronExpressions": [
