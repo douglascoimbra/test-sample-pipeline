@@ -1,0 +1,30 @@
+{
+  "defaults": {
+    "cronExpressions": [
+      "0 */5 0 ? * * *"
+    ],
+    "prepareScripts": [
+      "prepare.sql"
+    ]
+  },
+  "pipelines": [
+    {
+      "pipelineName": "newunifproduct_main",
+      "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
+      "outputDataModelName": "mdmproduct",
+      "checkExistsDataToProcess": true,
+      "overlapDeltaMinutes": 30,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "sendToSubscriptions": true,
+      "useBatchNotification": false,
+      "cronExpressions": [
+        "0 0/1 * ? * MON-FRI *",
+        "0 0/3 * ? * SAT,SUN *"
+      ],
+      "processScript": "audproduct.csql",
+      "sourceEntities": {}
+    }
+  ]
+}
