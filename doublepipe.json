@@ -25,6 +25,36 @@
       ],
       "processScript": "audproduct.csql",
       "sourceEntities": {}
+    },
+    {
+      "pipelineName": "purchaseorder_main",
+      "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
+      "outputDataModelName": "mdmpurchaseorder",
+      "overlapDeltaMinutes": 300,
+      "saveToCds": true,
+      "saveToUnified": true,
+      "saveToRealtime": true,
+      "checkExistsDataToProcess": true,
+      "useBatchNotification": true,
+      "tempTableRetentionPeriodDays": 10,
+      "sendToSubscriptions": false,
+      "cronExpressions": [
+        "0 * * ? * *"
+      ],
+      "processScript": "audpurchase.csql",
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmpurchaseorder"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "purchaseorder"
+          }
+        ]
+      }
     }
   ]
 }
