@@ -8,7 +8,7 @@ TO_HEX(MD5(CONCAT(concat(stg.orderid,'|',stg.purchasedate)))) as __mdmId,
     stg.purchasedate as cronus,
     CONCAT("qawork-", stg.category) as mdmcategoryname,
     CONTAINS_SUBSTR(stg.country, 'Argentina') AS mdmDeleted
-    --metadataNoId-v2--
+    --metadata-v2--
 from stg_nlp_purchaseorder as stg
 where 1=1
 --timestamp-- and stg.mdmCounterForEntity > {{start_from}}
