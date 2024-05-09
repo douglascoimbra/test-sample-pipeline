@@ -1,5 +1,4 @@
 SELECT 
-TO_HEX(MD5(CONCAT(concat(stg.orderid,'|',stg.purchasedate)))) as __mdmId,
     stg.orderid as mdmorderid,
     stg.mdmId AS stgRecordId,
     stg.customername as mdmcustomername,
