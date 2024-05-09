@@ -1,6 +1,5 @@
 SELECT 
     stg.orderid as mdmorderid,
-    stg.mdmId AS stgRecordId,
     stg.customername as mdmcustomername,
     stg.country as mdmcountry,
     stg.country as newfieldpurchase,
