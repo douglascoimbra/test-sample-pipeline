@@ -114,7 +114,7 @@
       "saveToUnified": true,
       "saveToRealtime": false,
       "sendToSubscriptions": true,
-      "useBatchNotification": true,
+      "useBatchNotification": false,
       "cronExpressions": [
         "0 0/3 * ? * * *"
       ],
