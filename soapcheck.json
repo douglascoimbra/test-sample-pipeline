@@ -10,7 +10,7 @@
   "pipelines": [
     {
       "pipelineName": "newunifproduct_main",
-      "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
+      "pipelineDescription": "Pipeline Test the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
       "checkExistsDataToProcess": true,
       "overlapDeltaMinutes": 30,
@@ -21,7 +21,7 @@
       "useBatchNotification": false,
       "cronExpressions": [
         "0 0/1 * ? * MON-FRI *",
-        "0 0/3 * ? * SAT,SUN *"
+        "0 0/2 * ? * SAT,SUN *"
       ],
       "processScript": "audproduct.csql",
       "sourceEntities": {
@@ -79,7 +79,7 @@
       "checkExistsDataToProcess": true,
       "useBatchNotification": false,
       "cronExpressions": [
-        "0 0/3 * ? * MON-FRI *",
+        "0 0/2 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
       ],
       "processScript": "farhorizonv2.csql",
