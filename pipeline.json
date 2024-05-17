@@ -10,7 +10,7 @@
   "pipelines": [
     {
       "pipelineName": "newunifproduct_main",
-      "pipelineDescription": "Pipeline for the product table, that uses staging nlp_product",
+      "pipelineDescription": "New Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
       "checkExistsDataToProcess": true,
       "overlapDeltaMinutes": 300,
