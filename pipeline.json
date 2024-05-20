@@ -112,6 +112,7 @@
       "overlapDeltaMinutes": 300,
       "saveToCds": true,
       "saveToUnified": true,
+      "checkExistsDataToProcess": true,
       "saveToRealtime": false,
       "sendToSubscriptions": true,
       "useBatchNotification": false,
