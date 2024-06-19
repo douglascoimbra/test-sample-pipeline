@@ -20,6 +20,7 @@
       "tempTableRetentionPeriodDays": 1,
       "sendTo": {
         "realtime": true,
+        "cds": true,
         "bigquery": {
           "customer": true,
           "unified": true
