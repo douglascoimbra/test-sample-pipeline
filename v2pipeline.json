@@ -15,7 +15,7 @@
       "outputDataModelName": "mdmproduct",
       "checkExistsDataToProcess": true,
       "overlapDeltaMinutes": 300,
-      "fanOut": false,
+      "fanOut": true,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 1,
       "sendTo": {
@@ -113,6 +113,7 @@
       "pipelineDescription": "Far Horizon Data Model, that uses staging nlp_product",
       "outputDataModelName": "mdmfarhorizon",
       "overlapDeltaMinutes": 300,
+      "fanOut": false,
       "checkExistsDataToProcess": true,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 9,
