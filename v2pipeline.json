@@ -1,4 +1,5 @@
 {
+  "version": "V2",
   "defaults": {
     "cronExpressions": [
       "0 */5 0 ? * * *"
@@ -14,14 +15,31 @@
       "outputDataModelName": "mdmproduct",
       "checkExistsDataToProcess": true,
       "overlapDeltaMinutes": 300,
-      "saveToCds": true,
-      "saveBigQueryUnified": true,
-      "saveBigQueryCustomer": true,
-      "saveToRealtime": false,
-      "shouldFanOut": true,
-      "sendToSubscriptions": true,
+      "fanOut": false,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 1,
+      "sendTo": {
+        "realtime": true,
+        "bigquery": {
+          "customer": true,
+          "unified": true
+        },
+        "subscriptions": {
+          "customer": true,
+          "unified": true
+        }
+      },
+      "clear": {
+        "realtime": true,
+        "bigquery": {
+          "customer": true,
+          "unified": true
+        },
+        "subscriptions": {
+          "customer": true,
+          "unified": true
+        }
+      },
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
@@ -46,15 +64,31 @@
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
       "outputDataModelName": "mdmpurchaseorder",
       "overlapDeltaMinutes": 300,
-      "saveToCds": true,
-      "saveBigQueryUnified": true,
-      "saveBigQueryCustomer": true,
-      "shouldFanOut": true,
-      "saveToRealtime": false,
       "checkExistsDataToProcess": true,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 10,
-      "sendToSubscriptions": true,
+      "sendTo": {
+        "realtime": true,
+        "bigquery": {
+          "customer": false,
+          "unified": true
+        },
+        "subscriptions": {
+          "customer": false,
+          "unified": true
+        }
+      },
+      "clear": {
+        "realtime": true,
+        "bigquery": {
+          "customer": false,
+          "unified": true
+        },
+        "subscriptions": {
+          "customer": false,
+          "unified": true
+        }
+      },
       "cronExpressions": [
         "0 * * ? * *"
       ],
@@ -78,10 +112,6 @@
       "pipelineDescription": "Far Horizon Data Model, that uses staging nlp_product",
       "outputDataModelName": "mdmfarhorizon",
       "overlapDeltaMinutes": 300,
-      "saveToCds": true,
-      "saveToUnified": true,
-      "saveToRealtime": false,
-      "sendToSubscriptions": true,
       "checkExistsDataToProcess": true,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 9,
@@ -113,12 +143,30 @@
       "pipelineDescription": "Pipeline to list purchase order table, that uses staging nlp_product with jOIN",
       "outputDataModelName": "mdmpurchaseproducts",
       "overlapDeltaMinutes": 300,
-      "saveToCds": true,
-      "saveToUnified": true,
       "checkExistsDataToProcess": true,
-      "saveToRealtime": false,
-      "sendToSubscriptions": true,
       "useBatchNotification": false,
+      "sendTo": {
+        "realtime": false,
+        "bigquery": {
+          "customer": false,
+          "unified": false
+        },
+        "subscriptions": {
+          "customer": false,
+          "unified": false
+        }
+      },
+      "clear": {
+        "realtime": false,
+        "bigquery": {
+          "customer": false,
+          "unified": false
+        },
+        "subscriptions": {
+          "customer": false,
+          "unified": false
+        }
+      },
       "cronExpressions": [
         "0 0/3 * ? * * *"
       ],
