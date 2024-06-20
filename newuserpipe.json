@@ -6,6 +6,7 @@
       "sendToSubscriptions": true,
       "saveToCds": true,
       "saveToRealtime": true,
+      "checkExistsDataToProcess": true,
       "outputDataModelName": "mdmuser",
       "saveToUnified": true,
       "cronExpressions": [
