@@ -16,7 +16,7 @@
       "checkExistsDataToProcess": true,
       "overlapDeltaMinutes": 300,
       "fanOut": true,
-      "useBatchNotification": false,
+      "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 1,
       "sendTo": {
         "realtime": true,
@@ -115,7 +115,7 @@
       "overlapDeltaMinutes": 300,
       "fanOut": false,
       "checkExistsDataToProcess": true,
-      "useBatchNotification": true,
+      "useBatchNotification": false,
       "tempTableRetentionPeriodDays": 9,
       "cronExpressions": [
         "0 0/3 * ? * MON-FRI *",
