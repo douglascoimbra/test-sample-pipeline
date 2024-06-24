@@ -6,7 +6,7 @@
       "fanOut": true,
       "checkExistsDataToProcess": true,
       "useBatchNotification": false,
-      "overlapDeltaMinutes": 0,
+      "overlapDeltaMinutes": 300,
       "outputDataModelName": "mdmuser",
       "tempTableRetentionPeriodDays": 1,
       "sendTo": {
