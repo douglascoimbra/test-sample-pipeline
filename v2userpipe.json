@@ -1,0 +1,54 @@
+{
+  "pipelines": [
+    {
+      "pipelineName": "v2new_user_main",
+      "processScript": "newuser.csql",
+      "fanOut": true,
+      "checkExistsDataToProcess": true,
+      "useBatchNotification": false,
+      "overlapDeltaMinutes": 0,
+      "outputDataModelName": "mdmuser",
+      "tempTableRetentionPeriodDays": 1,
+      "sendTo": {
+        "realtime": true,
+        "cds": true,
+        "bigquery": {
+          "customer": true,
+          "unified": true
+        },
+        "subscriptions": {
+          "customer": true,
+          "unified": true
+        }
+      },
+      "clear": {
+        "realtime": true,
+        "bigquery": {
+          "customer": true,
+          "unified": true
+        },
+        "subscriptions": {
+          "customer": true,
+          "unified": true
+        }
+      },
+      "cronExpressions": [
+        "0 0/3 * ? * MON-FRI *",
+        "0 0/2 * ? * SAT,SUN *"
+      ],
+      "sourceEntities": {
+        "dataModels": [
+          {
+            "dataModelName": "mdmuser"
+          }
+        ],
+        "stagings": [
+          {
+            "connectorName": "nlp",
+            "stagingName": "usertable"
+          }
+        ]
+      }
+    }
+  ]
+}
