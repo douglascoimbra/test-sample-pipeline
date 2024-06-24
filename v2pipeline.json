@@ -10,7 +10,7 @@
   },
   "pipelines": [
     {
-      "pipelineName": "v2newunifproduct_main",
+      "pipelineName": "newunifproduct_main",
       "pipelineDescription": "New Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
       "checkExistsDataToProcess": true,
@@ -61,7 +61,7 @@
       }
     },
     {
-      "pipelineName": "v2purchaseorder_main",
+      "pipelineName": "purchaseorder_main",
       "pipelineDescription": "Pipeline for the purchase table, that uses staging nlp_product",
       "outputDataModelName": "mdmpurchaseorder",
       "overlapDeltaMinutes": 300,
@@ -109,7 +109,7 @@
       }
     },
     {
-      "pipelineName": "v2newfarhorizon_main",
+      "pipelineName": "newfarhorizon_main",
       "pipelineDescription": "Far Horizon Data Model, that uses staging nlp_product",
       "outputDataModelName": "mdmfarhorizon",
       "overlapDeltaMinutes": 300,
@@ -141,7 +141,7 @@
       }
     },
     {
-      "pipelineName": "v2purchase_products",
+      "pipelineName": "purchase_products",
       "pipelineDescription": "Pipeline to list purchase order table, that uses staging nlp_product with jOIN",
       "outputDataModelName": "mdmpurchaseproducts",
       "overlapDeltaMinutes": 300,
