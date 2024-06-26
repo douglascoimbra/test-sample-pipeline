@@ -46,7 +46,7 @@
       "overlapDeltaMinutes": 300,
       "saveToCds": true,
       "saveToUnified": true,
-      "saveToRealtime": false,
+      "saveToRealtime": true,
       "checkExistsDataToProcess": true,
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 10,
