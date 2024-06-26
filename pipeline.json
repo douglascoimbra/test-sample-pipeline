@@ -21,7 +21,7 @@
       "useBatchNotification": true,
       "tempTableRetentionPeriodDays": 1,
       "cronExpressions": [
-        "0 0/3 * ? * MON-FRI *",
+        "0 0/1 * ? * MON-FRI *",
         "0 0/2 * ? * SAT,SUN *"
       ],
       "processScript": "audproduct.csql",
