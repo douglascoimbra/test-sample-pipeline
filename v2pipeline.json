@@ -120,7 +120,7 @@
       "sendTo": {
         "realtime": false,
         "bigquery": {
-          "customer": false,
+          "customer": true,
           "unified": false
         },
         "subscriptions": {
