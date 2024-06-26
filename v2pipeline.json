@@ -113,7 +113,7 @@
       "pipelineDescription": "Far Horizon Data Model, that uses staging nlp_product",
       "outputDataModelName": "mdmfarhorizon",
       "overlapDeltaMinutes": 300,
-      "fanOut": false,
+      "fanOut": true,
       "checkExistsDataToProcess": true,
       "useBatchNotification": false,
       "tempTableRetentionPeriodDays": 9,
@@ -131,7 +131,7 @@
       "clear": {
         "realtime": false,
         "bigquery": {
-          "customer": false,
+          "customer": true,
           "unified": false
         },
         "subscriptions": {
@@ -168,6 +168,7 @@
       "outputDataModelName": "mdmpurchaseproducts",
       "overlapDeltaMinutes": 300,
       "checkExistsDataToProcess": true,
+      "fanOut": false,
       "useBatchNotification": false,
       "sendTo": {
         "realtime": false,
@@ -183,8 +184,8 @@
       "clear": {
         "realtime": false,
         "bigquery": {
-          "customer": false,
-          "unified": false
+          "customer": true,
+          "unified": true
         },
         "subscriptions": {
           "customer": false,
