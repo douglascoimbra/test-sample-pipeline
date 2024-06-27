@@ -66,7 +66,7 @@
       "outputDataModelName": "mdmpurchaseorder",
       "overlapDeltaMinutes": 300,
       "checkExistsDataToProcess": true,
-      "useBatchNotification": true,
+      "useBatchNotification": false,
       "tempTableRetentionPeriodDays": 10,
       "sendTo": {
         "realtime": true,
