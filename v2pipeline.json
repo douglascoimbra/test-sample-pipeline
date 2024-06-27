@@ -13,6 +13,7 @@
       "pipelineName": "newunifproduct_main",
       "pipelineDescription": "New Pipeline for the product table, that uses staging nlp_product",
       "outputDataModelName": "mdmproduct",
+      "timezone":"+05:30",
       "checkExistsDataToProcess": true,
       "overlapDeltaMinutes": 300,
       "fanOut": true,
