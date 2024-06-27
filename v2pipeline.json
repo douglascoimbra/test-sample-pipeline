@@ -67,6 +67,7 @@
       "outputDataModelName": "mdmpurchaseorder",
       "overlapDeltaMinutes": 300,
       "checkExistsDataToProcess": true,
+      "timeZone": "America/Grenada",
       "useBatchNotification": false,
       "tempTableRetentionPeriodDays": 10,
       "sendTo": {
