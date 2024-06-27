@@ -27,7 +27,7 @@
         },
         "subscriptions": {
           "customer": true,
-          "unified": true
+          "unified": false
         }
       },
       "clear": {
@@ -189,7 +189,7 @@
         },
         "subscriptions": {
           "customer": false,
-          "unified": false
+          "unified": true
         }
       },
       "cronExpressions": [
