@@ -168,10 +168,10 @@
       "outputDataModelName": "mdmpurchaseproducts",
       "overlapDeltaMinutes": 300,
       "checkExistsDataToProcess": true,
-      "fanOut": false,
+      "fanOut": true,
       "useBatchNotification": false,
       "sendTo": {
-        "realtime": false,
+        "realtime": true,
         "bigquery": {
           "customer": false,
           "unified": false
