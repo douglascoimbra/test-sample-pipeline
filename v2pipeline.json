@@ -35,10 +35,6 @@
         "bigquery": {
           "customer": true,
           "unified": true
-        },
-        "subscriptions": {
-          "customer": true,
-          "unified": true
         }
       },
       "cronExpressions": [
@@ -83,10 +79,6 @@
       "clear": {
         "realtime": true,
         "bigquery": {
-          "customer": false,
-          "unified": true
-        },
-        "subscriptions": {
           "customer": false,
           "unified": true
         }
@@ -134,10 +126,6 @@
         "bigquery": {
           "customer": false,
           "unified": true
-        },
-        "subscriptions": {
-          "customer": false,
-          "unified": false
         }
       },
       "cronExpressions": [
@@ -184,10 +172,6 @@
       "clear": {
         "realtime": false,
         "bigquery": {
-          "customer": false,
-          "unified": false
-        },
-        "subscriptions": {
           "customer": false,
           "unified": false
         }
