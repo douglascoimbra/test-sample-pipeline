@@ -16,7 +16,7 @@
       "saveToCds": true,
       "saveToUnified": true,
       "saveToRealtime": true,
-      'sendToSubscriptions": true,
+      "sendToSubscriptions": true,
       "cronExpressions": [
         "0 10,40 * * * ?"
       ],
